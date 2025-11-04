@@ -3,361 +3,424 @@
 import { motion, AnimatePresence } from "framer-motion"
 import { useState } from "react"
 import Image from "next/image"
-import { Calendar, MapPin, Users, X, ChevronLeft, ChevronRight } from "lucide-react"
+import { Calendar, MapPin, Users, X, ChevronLeft, ChevronRight, ArrowRight, Check } from "lucide-react"
 
-const slideshowImages = [
-  {
-    src: "/images/ictkalika-logo.png",
-    title: "INSTALLATION",
-    description: "First event of the year, Installation Ceremony",
-    eventId: 1,
-  },
-   {
-    src: "/images/ictkalika-logo.png",
-    title: "INSTALLATION",
-    description: "First event of the year, Installation Ceremony",
-    eventId: 2,
-  },
-   {
-    src: "/images/ictkalika-logo.png",
-    title: "INSTALLATION",
-    description: "First event of the year, Installation Ceremony",
-    eventId: 3,
-  },
-]
-
+// Data remains the same as provided
 const events = [
-  {
-    id: 1,
-    title: "INSTALLATION CEREMONY",
-    date: "2025-07-27",
-    location: "LOC",
-    participants: 100,
-    image: "images/ictkalika-logo.png",
-    description: "First event of the year, Installation Ceremony",
-    details:
-      "Join us for the grand installation ceremony marking the beginning of our new academic year. This ceremony will officially install the new executive committee and set the tone for upcoming activities.",
-    highlights: [
-      "Official installation of new executive committee",
-      "Keynote speech by Alumini",
-      "",
-    ],
-    gallery: [
-      "/images/ictkalika-logo.png",
-      "/images/ictkalika-logo.png",
-    ],
-  },
-  {
-    id: 2,
-    title: "INSTALLATION CEREMONY",
-    date: "2025-07-27",
-    location: "LOC",
-    participants: 100,
-    image: "images/ictkalika-logo.png",
-    description: "First event of the year, Installation Ceremony",
-    details:
-      "Join us for the grand installation ceremony marking the beginning of our new academic year. This ceremony will officially install the new executive committee and set the tone for upcoming activities.",
-    highlights: [
-      "Official installation of new executive committee",
-      "Keynote speech by Alumini",
-      "",
-    ],
-    gallery: [
-      "/images/ictkalika-logo.png",
-      "/images/ictkalika-logo.png",
-    ],
-  },
-
- 
+  {
+    id: 1,
+    title: "INSTALLATION CEREMONY 2025",
+    date: "2025-07-27",
+    location: "Kalika Manavgyan Secondary School",
+    participants: 100,
+    image: "/images/installation/img1.jpg",
+    description: "Successfully completed installation ceremony marking the start of a new tenure for ICT Club of Kalika",
+    details:
+      "ICT Club of Kalika has successfully completed its installation ceremony on 27th of July 2025. With this event, it marks the start of a new tenure with fresh leadership and renewed energy to drive technology innovation and digital literacy among students.",
+    highlights: [
+      "Siddhant Panthi installed as President",
+      "Sanjog Pandey appointed as Vice President",
+      "Ramit Neupane takes role of Secretary",
+      "Shasank Shrestha designated as Treasurer",
+      "Bishnu Adhikari appointed as Head of Executive",
+      "Nayan Acharya installed as IT Head",
+      "Narayan Bhusal takes position of IT Officer",
+      "Complete executive committee successfully installed",
+    ],
+    gallery: [
+      "/images/installation/img1.jpg",
+      "/images/installation/img2.jpg",
+    ],
+  },
+  {
+    id: 2,
+    title: "NEW LEADERSHIP BEGINS",
+    date: "2025-07-27",
+    location: "Kalika Manavgyan Secondary School",
+    participants: 100,
+    image: "/images/installation/img2.jpg",
+    description: "President Siddhant Panthi reveals the Board of Directors for the tenure 2025-26",
+    details:
+      "Following the successful installation ceremony, President Siddhant Panthi unveiled the complete Board of Directors for ICT Club of Kalika for the academic year 2025-26. The new leadership team brings diverse skills and expertise to drive innovation and digital literacy.",
+    highlights: [
+      "Siddhant Panthi - President",
+      "Sanjog Pandey - Vice President",
+      "Ramit Neupane - Secretary",
+      "Shasank Shrestha - Treasurer",
+      "Bishnu Adhikari - Head of Executive",
+      "Nayan Acharya - IT Head",
+      "Narayan Bhusal - IT Officer",
+      "Nishan Regmi - Media",
+      "Sweta Lamsal - Joint Secretary",
+      "Aaditya Khanal - Leader of Grade 11",
+      "Himanshu Sapkota - Leader of Grade 10",
+      "Samriddha Poudel - Leader of Grade 9",
+      "Prazwal Roka - Executive Member",
+      "Amit Pandey - Executive Member",
+      "Raunak Acharya - Executive Member",
+      "Aman Pokharel - Executive Member",
+      "Nischal Darnal - Executive Member",
+      "Anushka Pokhrel - Executive Member",
+      "Rabin Chudali - Executive Member",
+      "Girija Karki - Executive Member",
+      "Sumit Kawar Magar - Executive Member",
+      "Anshu Aryal - Executive Member",
+      "Susant Gautam - Executive Member",
+    ],
+    gallery: [
+      "/images/installation/img2.jpg",
+      "/images/installation/img1.jpg",
+    ],
+  },
+  {
+    id: 3,
+    title: "IT FEST 2082 - TITLE WINNERS",
+    date: "2025-08-29",
+    location: "Chitwan",
+    participants: 50,
+    image: "/images/itfest/img1.jpg",
+    description: "ICT Club of Kalika becomes the Title Winner of IT Fest 2082 organized by Interact Club of Valmiki",
+    details:
+      "ICT Club of Kalika participated in IT Fest 2082, a 3-day event held from August 29-31, 2025, organized by Interact Club of Valmiki in Chitwan. Our talented team showcased exceptional skills and innovation throughout the three days, ultimately winning the championship trophy and being crowned as the Title Winners of the event.",
+    highlights: [
+      "3-day event: August 29, 30, 31, 2025",
+      "ICT Club of Kalika wins the championship",
+      "Team showcased exceptional technical skills",
+      "Grabbed the trophy as Title Winners",
+      "Event organized by Interact Club of Valmiki",
+      "Competition held in Chitwan",
+      "Proud moment for ICT Club of Kalika",
+    ],
+    gallery: [
+      "/images/itfest/img1.jpg",
+      "/images/itfest/img2.jpg",
+    ],
+  },
 ]
 
-export default function EventsPage() {
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const [selectedEvent, setSelectedEvent] = useState<(typeof events)[0] | null>(null)
-  const [currentGalleryImage, setCurrentGalleryImage] = useState(0)
+export default function EventsPageReimagined() {
+  const [selectedEvent, setSelectedEvent] = useState<(typeof events)[0] | null>(null)
+  const [currentGalleryImage, setCurrentGalleryImage] = useState(0)
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slideshowImages.length)
-  }
+  // Get the featured event (we'll use the first one)
+  const featuredEvent = events[0]
 
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slideshowImages.length) % slideshowImages.length)
-  }
+  const handleOpenModal = (event: (typeof events)[0]) => {
+    setSelectedEvent(event)
+    setCurrentGalleryImage(0)
+  }
 
-  const handleSlideshowClick = () => {
-    const currentSlideImage = slideshowImages[currentSlide]
-    if (currentSlideImage.eventId) {
-      const event = events.find(e => e.id === currentSlideImage.eventId)
-      if (event) {
-        setSelectedEvent(event)
-        setCurrentGalleryImage(0)
-      }
-    }
-  }
+  const nextGalleryImage = () => {
+    if (selectedEvent) {
+      setCurrentGalleryImage((prev) => (prev + 1) % selectedEvent.gallery.length)
+    }
+  }
 
-  const nextGalleryImage = () => {
-    if (selectedEvent) {
-      setCurrentGalleryImage((prev) => (prev + 1) % selectedEvent.gallery.length)
-    }
-  }
+  const prevGalleryImage = () => {
+    if (selectedEvent) {
+      setCurrentGalleryImage((prev) => (prev - 1 + selectedEvent.gallery.length) % selectedEvent.gallery.length)
+    }
+  }
 
-  const prevGalleryImage = () => {
-    if (selectedEvent) {
-      setCurrentGalleryImage((prev) => (prev - 1 + selectedEvent.gallery.length) % selectedEvent.gallery.length)
-    }
-  }
+  return (
+    <div className="pt-24 pb-16 bg-zinc-900 text-gray-100">
+      {/* Featured Event Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="w-full"
+          >
+            <Image
+              src={featuredEvent.image || "/placeholder.svg"}
+              alt={featuredEvent.title}
+              width={600}
+              height={400}
+              className="w-full h-auto object-cover rounded-2xl shadow-2xl shadow-cyan-900/20"
+            />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <span className="text-cyan-400 font-semibold text-sm uppercase tracking-wider">
+              Featured Event
+            </span>
+            <h1 className="text-4xl md:text-5xl font-bold text-white my-4">
+              {featuredEvent.title}
+            </h1>
+            <div className="flex flex-wrap gap-x-6 gap-y-2 text-zinc-300 mb-6">
+              <div className="flex items-center">
+                <Calendar size={16} className="mr-2 text-cyan-400" />
+                {new Date(featuredEvent.date).toLocaleDateString()}
+              </div>
+              <div className="flex items-center">
+                <MapPin size={16} className="mr-2 text-cyan-400" />
+                {featuredEvent.location}
+              </div>
+            </div>
+            <p className="text-lg text-zinc-300 mb-8 max-w-lg">
+              {featuredEvent.description}
+            </p>
+            <motion.button
+              onClick={() => handleOpenModal(featuredEvent)}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center px-8 py-3 bg-cyan-500 hover:bg-cyan-400 text-zinc-900 font-bold rounded-lg transition-all duration-300 shadow-lg shadow-cyan-500/30"
+            >
+              Read More
+              <ArrowRight size={20} className="ml-2" />
+            </motion.button>
+          </motion.div>
+        </div>
+      </section>
 
-  return (
-    <div className="pt-16">
-      {/* Slideshow Section */}
-      <section className="relative h-screen overflow-hidden">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentSlide}
-            initial={{ opacity: 0, scale: 1.1 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.9 }}
-            transition={{ duration: 0.8 }}
-            className="absolute inset-0 cursor-pointer"
-            onClick={handleSlideshowClick}
-          >
-            <Image
-              src={slideshowImages[currentSlide].src || "/placeholder.svg"}
-              alt={slideshowImages[currentSlide].title}
-              fill
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent hover:from-black/70 hover:via-black/30 transition-all duration-300" />
-          </motion.div>
-        </AnimatePresence>
+      {/* Events Carousel Section */}
+      <section className="w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-4xl font-bold text-white mb-4">All Events</h2>
+            <p className="text-lg text-zinc-300 mb-10 max-w-2xl">
+              Explore our past workshops, competitions, and ceremonies.
+            </p>
+          </motion.div>
+        </div>
+        
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="pl-4 sm:pl-6 lg:pl-8"
+        >
+          <div className="flex overflow-x-auto gap-6 py-6 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-cyan-700 scrollbar-track-zinc-800">
+            {events.map((event, index) => (
+              <motion.div
+                key={event.id}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="snap-start flex-shrink-0 w-80 md:w-96 bg-zinc-800 border border-zinc-700 rounded-xl overflow-hidden shadow-lg transition-all duration-300 group"
+              >
+                <div className="relative overflow-hidden h-48">
+                  <Image
+                    src={event.image || "/placeholder.svg"}
+                    alt={event.title}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-5">
+                  <h3 className="text-xl font-bold text-white mb-2 truncate">{event.title}</h3>
+                  <div className="flex items-center text-sm text-cyan-400 mb-4">
+                    <Calendar size={14} className="mr-1.5" />
+                    {new Date(event.date).toLocaleDateString()}
+                  </div>
+                  <p className="text-zinc-300 text-sm mb-5 line-clamp-2">{event.description}</p>
+                  <button
+                    onClick={() => handleOpenModal(event)}
+                    className="font-semibold text-cyan-400 hover:text-cyan-300 transition-colors duration-300 group-hover:underline"
+                  >
+                    View Details <span aria-hidden="true" className="inline-block transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+                  </button>
+              _</div>
+              </motion.div>
+            ))}
+            <div className="flex-shrink-0 w-8 pr-4 sm:pr-6 lg:pr-8"></div> {/* E_nd spacer */}
+          </div>
+        </motion.div>
+      </section>
 
-        {/* Slideshow Controls */}
-        <button
-          onClick={prevSlide}
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-3 rounded-full transition-all duration-300 glow-button"
-        >
-          <ChevronLeft size={24} />
-        </button>
-        <button
-          onClick={nextSlide}
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-3 rounded-full transition-all duration-300 glow-button"
-        >
-          <ChevronRight size={24} />
-        </button>
+      {/* Event Detail Modal (Re-skinned) */}
+      <AnimatePresence>
+        {selectedEvent && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/80 backdrop-blur-lg z-50 flex items-center justify-center p-4"
+            onClick={() => setSelectedEvent(null)}
+          >
+  _          <motion.div
+              initial={{ scale: 0.9, y: 50, opacity: 0 }}
+              animate={{ scale: 1, y: 0, opacity: 1 }}
+              exit={{ scale: 0.9, y: 50, opacity: 0 }}
+              transition={{ duration: 0.3, ease: "circOut" }}
+              className="bg-zinc-900 border border-zinc-700/80 rounded-2xl max-w-5xl w-full max-h-[90vh] overflow-hidden shadow-2xl shadow-cyan-900/20"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Header with Image */}
+              <div className="relative h-64 md:h-80 overflow-hidden">
+                <Image
+                  src={selectedEvent.image}
+                  alt={selectedEvent.title}
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/60 to-transparent" />
+                
+                {/* Close Button */}
+                <button
+                  onClick={() => setSelectedEvent(null)}
+                  aria-label="Close modal"
+                  className="absolute top-4 right-4 z-10 bg-zinc-800/70 hover:bg-zinc-700/90 backdrop-blur-sm text-white p-3 rounded-full transition-all duration-300 hover:scale-110"
+                >
+                  <X size={24} />
+                </button>
 
-        {/* Slideshow Content */}
-        <div 
-          className="absolute bottom-0 left-0 right-0 p-8 md:p-16 cursor-pointer"
-          onClick={handleSlideshowClick}
-        >
-          <motion.div
-            key={currentSlide}
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="max-w-4xl"
-          >
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 glow-text hover:text-[#9bd3ff] transition-colors duration-300">
-              {slideshowImages[currentSlide].title}
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-300 max-w-2xl hover:text-white transition-colors duration-300">
-              {slideshowImages[currentSlide].description}
-            </p>
-            <p className="text-sm text-[#9bd3ff] mt-2 font-medium">
-              Click to view event details →
-            </p>
-          </motion.div>
-        </div>
+                {/* Title Overlay */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 drop-shadow-lg">
+                    {selectedEvent.title}
+                  </h2>
+                  <div className="flex flex-wrap gap-3 text-sm">
+                    <div className="flex items-center text-cyan-300 bg-cyan-900/50 backdrop-blur-sm px-3 py-1.5 rounded-full font-medium">
+                      <Calendar size={14} className="mr-2" />
+                      {new Date(selectedEvent.date).toLocaleDateString('en-US', { 
+                        year: 'numeric', 
+                        month: 'long', 
+                        day: 'numeric' 
+                      })}
+                    </div>
+                    <div className="flex items-center text-cyan-300 bg-cyan-900/50 backdrop-blur-sm px-3 py-1.5 rounded-full font-medium">
+                      <MapPin size={14} className="mr-2" />
+                      {selectedEvent.location}
+                    </div>
+                    <div className="flex items-center text-cyan-300 bg-cyan-900/50 backdrop-blur-sm px-3 py-1.5 rounded-full font-medium">
+                      <Users size={14} className="mr-2" />
+                      {selectedEvent.participants} participants
+                    </div>
+        _          </div>
+                </div>
+              </div>
 
-        {/* Slide Indicators */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
-          {slideshowImages.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentSlide ? "bg-[#9bd3ff] glow-border" : "bg-white/30"
-              }`}
-            />
-          ))}
-        </div>
-      </section>
+              {/* Content Area */}
+              <div className="overflow-y-auto max-h-[calc(90vh-20rem)] md:max-h-[calc(90vh-22rem)] scrollbar-thin scrollbar-thumb-zinc-700 scrollbar-track-zinc-800">
+                <div className="p-6 md:p-8">
+                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    {/* Left Column - Description & Highlights */}
+                    <div className="lg:col-span-2 space-y-8">
+                      {/* Description */}
+                      <div>
+                        <h3 className="text-xl font-bold text-cyan-400 mb-4 border-l-4 border-cyan-500 pl-3">
+                          Event Details
+                        </h3>
+                        <p className="text-zinc-300 leading-relaxed text-base prose-invert max-w-none">
+                          {selectedEvent.details}
+                        </p>
+                      </div>
 
-      {/* Events Carousel Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 glow-text"> Events</h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Join us for exciting events, workshops, and competitions throughout the year
-            </p>
-          </motion.div>
+                      {/* Highlights */}
+                      <div>
+                        <h3 className="text-xl font-bold text-cyan-400 mb-5 border-l-4 border-cyan-500 pl-3">
+                          Key Highlights
+                        </h3>
+          _            <div className="grid gap-3">
+                          {selectedEvent.highlights.map((highlight, index) => (
+                            <motion.div
+                              key={index}
+                              initial={{ opacity: 0, x: -20 }}
+                              animate={{ opacity: 1, x: 0 }}
+                      _      transition={{ delay: index * 0.05 }}
+                              className="flex items-start bg-zinc-800/60 border border-zinc-700/70 rounded-lg p-3.5"
+                            >
+                              <Check className="text-cyan-400 mr-3 mt-0.5 flex-shrink-0" size={18} />
+                              <span className="text-zinc-300 text-sm">{highlight}</span>
+                            </motion.div>
+                          ))}
+                        </div>
+                      </div>
+                  _</div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {events.map((event, index) => (
-              <motion.div
-                key={event.id}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="card-glow rounded-xl overflow-hidden cursor-pointer transition-all duration-300 group"
-                onClick={() => {
-                  setSelectedEvent(event)
-                  setCurrentGalleryImage(0)
-                }}
-                whileHover={{ scale: 1.02 }}
-              >
-                <div className="relative overflow-hidden">
-                  <Image
-                    src={event.image || "/placeholder.svg"}
-                    alt={event.title}
-                    width={400}
-                    height={300}
-                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                </div>
+                    {/* Right Column - Gallery */}
+                    <div className="lg:col-span-1">
+                      <h3 className="text-xl font-bold text-cyan-400 mb-5 border-l-4 border-cyan-500 pl-3">
+                        Gallery
+                      </h3>
+                      <div className="space-y-4">
+                        <div className="relative rounded-lg overflow-hidden border border-zinc-700/80 shadow-lg">
+                          <AnimatePresence mode="wait">
+                            <motion.div
+                              key={currentGalleryImage}
+                              initial={{ opacity: 0 }}
+                              animate={{ opacity: 1 }}
+                              exit={{ opacity: 0 }}
+                              transition={{ duration: 0.2 }}
+                            >
+                              <Image
+                                src={selectedEvent.gallery[currentGalleryImage] || "/placeholder.svg"}
+                                alt={`${selectedEvent.title} gallery ${currentGalleryImage + 1}`}
+                            	_ width={400}
+                  _             height={300}
+                                className="w-full h-64 object-cover"
+                              />
+                	          </motion.div>
+                          </AnimatePresence>
 
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-3">{event.title}</h3>
-                  <p className="text-gray-300 text-sm mb-4 line-clamp-2">{event.description}</p>
+                          {selectedEvent.gallery.length > 1 && (
+                            <>
+                              <button
+                                onClick={prevGalleryImage}
+                                aria-label="Previous image"
+                                className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-zinc-800/70 hover:bg-zinc-700/90 backdrop-blur-sm text-white p-2 rounded-full transition-all duration-300 hover:scale-110"
+                              >
+                -----------------      <ChevronLeft size={20} />
+                              </button>
+                              <button
+                                onClick={nextGalleryImage}
+                                aria-label="Next image"
+          _                    className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-zinc-800/70 hover:bg-zinc-700/90 backdrop-blur-sm text-white p-2 rounded-full transition-all duration-300 hover:scale-110"
+                              >
+                                <ChevronRight size={20} />
+                              </button>
+                            </>
+                          )}
 
-                  <div className="space-y-2 text-sm">
-                    <div className="flex items-center text-[#9bd3ff]">
-                      <Calendar size={16} className="mr-2" />
-                      {new Date(event.date).toLocaleDateString()}
-                    </div>
-                    <div className="flex items-center text-[#9bd3ff]">
-                      <MapPin size={16} className="mr-2" />
-                      {event.location}
-                    </div>
-                    <div className="flex items-center text-[#9bd3ff]">
-                      <Users size={16} className="mr-2" />
-                      {event.participants} participants
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+                          {/* Image Counter */}
+                          <div className="absolute bottom-3 right-3 bg-zinc-900/70 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-medium">
+                    _        {currentGalleryImage + 1} / {selectedEvent.gallery.length}
+                          </div>
+                      A_ </div>
 
-      {/* Event Detail Modal */}
-      <AnimatePresence>
-        {selectedEvent && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-            onClick={() => setSelectedEvent(null)}
-          >
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
-              className="card-glow rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button
-                onClick={() => setSelectedEvent(null)}
-                className="absolute top-4 right-4 z-10 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors duration-300"
-              >
-                <X size={20} />
-              </button>
-
-              <div className="p-8">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  {/* Event Details */}
-                  <div>
-                    <h2 className="text-3xl font-bold text-white mb-4 glow-text">{selectedEvent.title}</h2>
-
-                    <div className="space-y-3 mb-6">
-                      <div className="flex items-center text-[#9bd3ff]">
-                        <Calendar size={18} className="mr-3" />
-                        {new Date(selectedEvent.date).toLocaleDateString()}
-                      </div>
-                      <div className="flex items-center text-[#9bd3ff]">
-                        <MapPin size={18} className="mr-3" />
-                        {selectedEvent.location}
-                      </div>
-                      <div className="flex items-center text-[#9bd3ff]">
-                        <Users size={18} className="mr-3" />
-                        {selectedEvent.participants} participants
-                      </div>
-                    </div>
-
-                    <p className="text-gray-300 mb-6 leading-relaxed">{selectedEvent.details}</p>
-
-                    <div>
-                      <h3 className="text-xl font-bold text-white mb-3">Key Highlights</h3>
-                      <ul className="space-y-2">
-                        {selectedEvent.highlights.map((highlight, index) => (
-                          <li key={index} className="text-gray-300 flex items-start">
-                            <span className="text-[#9bd3ff] mr-2">•</span>
-                            {highlight}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-                  {/* Image Gallery */}
-                  <div>
-                    <h3 className="text-xl font-bold text-white mb-4">Event Gallery</h3>
-                    <div className="relative">
-                      <Image
-                        src={selectedEvent.gallery[currentGalleryImage] || "/placeholder.svg"}
-                        alt={`${selectedEvent.title} gallery ${currentGalleryImage + 1}`}
-                        width={400}
-                        height={300}
-                        className="w-full h-64 object-cover rounded-lg glow-border"
-                      />
-
-                      {selectedEvent.gallery.length > 1 && (
-                        <>
-                          <button
-                            onClick={prevGalleryImage}
-                            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors duration-300"
-                          >
-                            <ChevronLeft size={16} />
-                          </button>
-                          <button
-                            onClick={nextGalleryImage}
-                            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors duration-300"
-                          >
-                            <ChevronRight size={16} />
-                          </button>
-                        </>
-                      )}
-                    </div>
-
-                    {selectedEvent.gallery.length > 1 && (
-                      <div className="flex justify-center mt-4 space-x-2">
-                        {selectedEvent.gallery.map((_, index) => (
-                          <button
-                            key={index}
-                            onClick={() => setCurrentGalleryImage(index)}
-                            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                              index === currentGalleryImage ? "bg-[#9bd3ff]" : "bg-white/30"
-                            }`}
-                          />
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  )
+-----------------            {/* Gallery Thumbnails */}
+                        {selectedEvent.gallery.length > 1 && (
+                          <div className="grid grid-cols-4 gap-2.5">
+                s            {selectedEvent.gallery.map((img, index) => (
+                              <button
+                                key={index}
+                                onClick={() => setCurrentGalleryImage(index)}
+                                aria-label={`View image ${index + 1}`}
+                                className={`relative aspect-square rounded-lg overflow-hidden border-2 transition-all duration-300 ${
+                                  index === currentGalleryImage 
+                                    ? "border-cyan-500" 
+                                    : "border-zinc-700/60 opacity-60 hover:opacity-100 hover:border-zinc-500"
+s                              }`}
+                              >
+-----------------                <Image
+                                  src={img}
+                                  alt={`Thumbnail ${index + 1}`}
+                                  fill
+                                  className="object-cover"
+A                              />
+                              </button>
+                            ))}
+                          </div>
+s                      )}
+  s                  </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+  s      )}
+      </AnimatePresence>
+s  </div>
+  )
 }

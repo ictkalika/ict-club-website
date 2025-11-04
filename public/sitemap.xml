@@ -22,20 +22,25 @@
     <loc>https://ictkalika.tech/events</loc>
     <lastmod>2025-07-17</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://ictkalika.tech/partners</loc>
     <lastmod>2025-07-17</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://ictkalika.tech/faqs</loc>
     <lastmod>2025-07-17</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
   </url>
+  <url>
+  <loc>https://ictkalika.tech/nayab</loc>
+    <lastmod>2025-07-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
 </urlset>
 
 
