@@ -1,7 +1,18 @@
 const { MongoClient } = require('mongodb');
-require('dotenv').config();
+const path = require('path');
+const dotenv = require('dotenv');
+
+// Load .env located next to this script (scripts/.env) so the script works
+// even when run from the project root.
+dotenv.config({ path: path.resolve(__dirname, '.env') });
 
 const uri = process.env.MONGODB_URI;
+if (!uri) {
+    console.error('Environment variable MONGODB_URI is not set.');
+    console.error('If your .env is inside the scripts folder, it will be loaded automatically.');
+    console.error('Otherwise, set MONGODB_URI in your environment or move the .env to the project root.');
+    process.exit(1);
+}
 const client = new MongoClient(uri);
 
 // Board Members Data
@@ -65,6 +76,20 @@ const boardMembers = [{
         createdAt: new Date(),
         updatedAt: new Date()
     },
+        {
+        type: "board",
+        name: "Bishnu Adhikari",
+        position: "Head of Executive",
+        image: "/images/bishnu-adhikari.jpg",
+        bio: "Contributing to strategic planning and club operations.",
+        skills: ["Strategy", "Operations", "Member Engagement"],
+        social: {
+            linkedin: "https://www.linkedin.com/in/bishnu-adhikari-8bb6242a5/",
+            email: "yamadeath0@gmail.com"
+        },
+        createdAt: new Date(),
+        updatedAt: new Date()
+    },
     {
         type: "board",
         name: "NAYAN ACHARYA",
@@ -109,20 +134,7 @@ const boardMembers = [{
         createdAt: new Date(),
         updatedAt: new Date()
     },
-    {
-        type: "board",
-        name: "Bishnu Adhikari",
-        position: "Head of Executive",
-        image: "/images/bishnu-adhikari.jpg",
-        bio: "Contributing to strategic planning and club operations.",
-        skills: ["Strategy", "Operations", "Member Engagement"],
-        social: {
-            linkedin: "https://www.linkedin.com/in/bishnu-adhikari-8bb6242a5/",
-            email: "yamadeath0@gmail.com"
-        },
-        createdAt: new Date(),
-        updatedAt: new Date()
-    },
+
     {
         type: "board",
         name: "Sweta lamsal",
