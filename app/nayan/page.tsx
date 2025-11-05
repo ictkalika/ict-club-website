@@ -32,15 +32,15 @@ export default function NayanPage() {
               <ExternalLink size={32} />
             </a>
             <a href="https://linkedin.com/in/nayan135" target="_blank" rel="noopener noreferrer" 
-               className="text-white hover:text-purple-400 transition-colors">
+               className="text-white hover:text-purple-400 transition-colors" title="LinkedIn">
               <Linkedin size={32} />
             </a>
             <a href="https://twitter.com/nooneknows135" target="_blank" rel="noopener noreferrer"
-               className="text-white hover:text-purple-400 transition-colors">
+               className="text-white hover:text-purple-400 transition-colors" title="Twitter">
               <Twitter size={32} />
             </a>
             <a href="https://github.com/nayan135" target="_blank" rel="noopener noreferrer"
-               className="text-white hover:text-purple-400 transition-colors">
+               className="text-white hover:text-purple-400 transition-colors" title="GitHub">
               <Github size={32} />
             </a>
             <a href="mailto:nayan@ypstem.org"
