@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useTeam } from "@/contexts/TeamContext";
 import {
   X,
   Linkedin,
@@ -25,43 +26,13 @@ interface TeamMember {
     [key: string]: string;
   };
   grade?: number;
+  order?: number;
   type: 'board' | 'member' | 'advisor';
 }
 
 export default function TeamPage() {
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
-  const [boardMembers, setBoardMembers] = useState<TeamMember[]>([]);
-  const [members, setMembers] = useState<TeamMember[]>([]);
-  const [advisors, setAdvisors] = useState<TeamMember[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const fetchTeamData = async () => {
-      try {
-        setLoading(true);
-        setError(null);
-        
-        const response = await fetch('/api/team');
-        if (!response.ok) {
-          throw new Error('Failed to fetch team data');
-        }
-        
-        const data = await response.json();
-        
-        setBoardMembers(data.filter((member: TeamMember) => member.type === 'board'));
-        setMembers(data.filter((member: TeamMember) => member.type === 'member'));
-        setAdvisors(data.filter((member: TeamMember) => member.type === 'advisor'));
-      } catch (err) {
-        console.error('Error fetching team data:', err);
-        setError('Failed to load team data. Please try again later.');
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchTeamData();
-  }, []);
+  const { boardMembers, members, advisors, loading, error } = useTeam();
 
   const getSocialIcon = (platform: string, url: string) => {
     const iconProps = {
@@ -158,7 +129,9 @@ export default function TeamPage() {
           </motion.h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {boardMembers.map((member, index) => (
+            {boardMembers
+              .sort((a, b) => (a.order || 999) - (b.order || 999))
+              .map((member, index) => (
               <motion.div
                 key={member._id || member.name}
                 initial={{ opacity: 0, y: 50 }}

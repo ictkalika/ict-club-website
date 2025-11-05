@@ -7,6 +7,10 @@
 /.next/
 /out/
 
+
+#random
+/scripts/seedDatabase.js
+
 # production
 /build
 

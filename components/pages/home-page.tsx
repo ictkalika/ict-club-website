@@ -4,19 +4,25 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, Calendar, Users, Trophy } from "lucide-react"
+import { useTeam } from "@/contexts/TeamContext"
+import AdSenseAd from "@/components/ui/adsense-ad"
 import React from "react"
 
 const recentProjects = [
  
 ]
 
-const stats = [
-  { icon: Users, label: "Active Members", value: "150+" },
-  { icon: Calendar, label: "Events Held", value: "50+" },
-  { icon: Trophy, label: "Students Impacted", value: "500+" },
-]
-
 export default function HomePage() {  
+  const { boardMembers, members, advisors, loading } = useTeam();
+  
+  // Calculate dynamic stats based on actual team data
+  const totalMembers = boardMembers.length + members.length + advisors.length;
+  
+  const stats = [
+    { icon: Users, label: "Active Members", value: loading ? "Loading..." : `${totalMembers}+` },
+    { icon: Calendar, label: "Events Held", value: "50+" },
+    { icon: Trophy, label: "Students Impacted", value: "500+" },
+  ]  
   return (
     <>
       {/* AMP ad script injection */}
@@ -123,6 +129,17 @@ export default function HomePage() {
                 </motion.div>
               ))}
             </motion.div>
+          </div>
+        </section>
+
+        {/* Ad Section */}
+        <section className="py-10 px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <AdSenseAd 
+              adSlot="9767595606" 
+              responsive={true}
+              className="my-8"
+            />
           </div>
         </section>
 

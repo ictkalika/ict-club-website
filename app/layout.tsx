@@ -18,6 +18,8 @@ export const metadata = {
   },
   description: 'Innovate • Educate • Inspire. Founded in 2022 at Kalika Manavgyan Secondary School, ICT Club of Kalika is a vibrant community of students passionate about technology. We empower youth through hands-on workshops, tech projects, and collaborative events—promoting digital literacy, coding, robotics, and ICT innovations.',
   keywords: [
+    'ICT KALIKA',
+    'ICT CLUB OF KALIKA',
     'ICT Club Kalika',
     'Kalika Manavgyan Secondary School',
     'Student Technology Club',
@@ -31,6 +33,8 @@ export const metadata = {
     'Youth Tech Community',
     'School Technology Club',
     'Nepal ICT',
+    'ICT IN NEPAL',
+    'Kalika Manavgyan Secondary School',
     'Tech Events Nepal',
     'Coding Community'
   ].join(', '),
@@ -113,9 +117,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <>
-      <OrganizationSchema />
-      <ClientLayout>{children}</ClientLayout>
-    </>
+    <html lang="en">
+      <head>
+       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7528456570041321"
+     crossOrigin="anonymous"></script>
+      </head>
+      <body>
+        <ClientLayout>{children}</ClientLayout>
+      </body>
+    </html>
   )
 }

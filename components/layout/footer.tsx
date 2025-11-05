@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Mail, MapPin, Phone } from "lucide-react"
+import AdSenseAd from "@/components/ui/adsense-ad"
 
 export default function Footer() {
   return (
@@ -53,8 +54,19 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Ad Section */}
+        <div className="border-t border-white/10 mt-8 pt-8">
+          <div className="max-w-4xl mx-auto text-center mb-6">
+            <AdSenseAd 
+              adSlot="9767595606" 
+              responsive={true}
+              className="opacity-80 hover:opacity-100 transition-opacity"
+            />
+          </div>
+        </div>
+
         <div className="border-t border-white/10 mt-8 pt-8 text-center">
-          <p className="text-gray-400 text-sm">© 2025 ICT Club of K.M.G.S.S. All rights reserved. | Est. 2079</p>
+          <p className="text-gray-400 text-sm">© 2025 ICT Club of Kalika All rights reserved. | Est. 2079</p>
           <p className="text-gray-400 text-sm mt-2">
             Crafted with passion by NAYAN & NARAYAN
           </p>
