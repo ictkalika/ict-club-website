@@ -27,6 +27,10 @@ export default function NayanPage() {
             Specializing in Button Clicking at ICT KALIKA
           </p>
           <div className="flex justify-center gap-6 mb-8">
+            <a href="https://nayan135.com.np" target="_blank" rel="noopener noreferrer" 
+               className="text-white hover:text-purple-400 transition-colors" title="Personal Website">
+              <ExternalLink size={32} />
+            </a>
             <a href="https://linkedin.com/in/nayan135" target="_blank" rel="noopener noreferrer" 
                className="text-white hover:text-purple-400 transition-colors">
               <Linkedin size={32} />
@@ -40,7 +44,7 @@ export default function NayanPage() {
               <Github size={32} />
             </a>
             <a href="mailto:nayan@ypstem.org"
-               className="text-white hover:text-purple-400 transition-colors">
+               className="text-white hover:text-purple-400 transition-colors" title="Email">
               <Mail size={32} />
             </a>
           </div>
