@@ -330,7 +330,7 @@ export default function EventsPage() {
             >
               <button
                 onClick={() => setSelectedEvent(null)}
-                className="absolute top-4 right-4 z-10 bg-black/50 hover:bg-black/90 text-white p-2 rounded-full transition-colors duration-300"
+                className="absolute top-4 right-4 z-10 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors duration-300"
               >
                 <X size={20} />
               </button>

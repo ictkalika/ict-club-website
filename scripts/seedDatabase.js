@@ -1,7 +1,18 @@
 const { MongoClient } = require('mongodb');
-require('dotenv').config();
+const path = require('path');
+const dotenv = require('dotenv');
+
+// Load .env located next to this script (scripts/.env) so the script works
+// even when run from the project root.
+dotenv.config({ path: path.resolve(__dirname, '.env') });
 
 const uri = process.env.MONGODB_URI;
+if (!uri) {
+    console.error('Environment variable MONGODB_URI is not set.');
+    console.error('If your .env is inside the scripts folder, it will be loaded automatically.');
+    console.error('Otherwise, set MONGODB_URI in your environment or move the .env to the project root.');
+    process.exit(1);
+}
 const client = new MongoClient(uri);
 
 // Board Members Data
