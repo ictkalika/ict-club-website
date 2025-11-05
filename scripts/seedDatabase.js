@@ -2,8 +2,6 @@ const { MongoClient } = require('mongodb');
 const path = require('path');
 const dotenv = require('dotenv');
 
-// Load .env located next to this script (scripts/.env) so the script works
-// even when run from the project root.
 dotenv.config({ path: path.resolve(__dirname, '.env') });
 
 const uri = process.env.MONGODB_URI;
