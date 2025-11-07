@@ -80,10 +80,25 @@ const boardMembers = [{
 },
 {
     type: "board",
+    name: "Bishnu Adhikari",
+    position: "Head of Executive",
+    order: 8,
+    image: "/images/bishnu-adhikari.jpg",
+    bio: "Contributing to strategic planning and club operations.",
+    skills: ["Strategy", "Operations", "Member Engagement"],
+    social: {
+        linkedin: "https://www.linkedin.com/in/bishnu-adhikari-8bb6242a5/",
+        email: "yamadeath0@gmail.com"
+    },
+    createdAt: new Date(),
+    updatedAt: new Date()
+},
+{
+    type: "board",
     name: "NAYAN ACHARYA",
     position: "IT Head",
     order: 5,
-    image: "/images/nayan-acharya.jpg",
+    image: "https://n4ce5f0tqvsfhe7l.public.blob.vercel-storage.com/nayan-acharya.jpg",
     bio: "Overseeing technical projects and infrastructure.",
     skills: ["System Administration", "DevOps", "Technical Leadership"],
     social: {
@@ -125,21 +140,7 @@ const boardMembers = [{
     createdAt: new Date(),
     updatedAt: new Date()
 },
-{
-    type: "board",
-    name: "Bishnu Adhikari",
-    position: "Head of Executive",
-    order: 8,
-    image: "/images/bishnu-adhikari.jpg",
-    bio: "Contributing to strategic planning and club operations.",
-    skills: ["Strategy", "Operations", "Member Engagement"],
-    social: {
-        linkedin: "https://www.linkedin.com/in/bishnu-adhikari-8bb6242a5/",
-        email: "yamadeath0@gmail.com"
-    },
-    createdAt: new Date(),
-    updatedAt: new Date()
-},
+
 {
     type: "board",
     name: "Sweta lamsal",
@@ -290,21 +291,7 @@ const boardMembers = [{
     createdAt: new Date(),
     updatedAt: new Date()
 },
-/* {
-    type: "board",
-    name: "Rabin Chudali",
-    position: "Executive Member",
-    image: "/images/rabin-chudali.jpg",
-    bio: "Contributing to strategic planning and club operations",
-    skills: ["Strategy", "Operations", "Engagement"],
-    social: {
-        linkedin: "https://www.linkedin.com/in/rabin-chudali-9600b934b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-        email: "rabinchudali07@gmail.com"
-    },
-    createdAt: new Date(),
-    updatedAt: new Date()
-},
-*/
+
 {
     type: "board",
     name: "Girija Karki",
