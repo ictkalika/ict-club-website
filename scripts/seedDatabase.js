@@ -781,7 +781,7 @@ const advisors = [{
     type: "advisor",
     name: "Dinesh Thapa",
     position: "Advisor",
-    image: "https://kalikaschoolbtl.edu.np/public/storage/profiles/February2023/U760qbJVMpmeAEL1PpMK.jpg",
+    image: "/images/dinesh-thapa.jpg",
     social: {
         linkedin: "",
         twitter: ""
@@ -793,7 +793,7 @@ const advisors = [{
     type: "advisor",
     name: "Arbind Kumar Dubey",
     position: "Advisor",
-    image: "https://scontent.fkep3-1.fna.fbcdn.net/v/t1.6435-9/80609008_2556502627797679_3545427414731456512_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=rTOQW34e4eQQ7kNvwFitxSP&_nc_oc=AdktgjOHteoS5m_-WdsGu3KAdNfqn7IwvPlFD7HcHTV1qzZTtSu8-X-QW4NWBicrLMw&_nc_zt=23&_nc_ht=scontent.fkep3-1.fna&_nc_gid=u1J1CwPFySmD-qdZi6SKiA&oh=00_AfNgAYjfo96E60U0KcXi75hYht7-Ov4IRgxUeUouERYBbw&oe=6869FA03",
+    image: "/images/arbind-dubey.jpg",
     social: {
         linkedin: "",
         github: ""
@@ -805,7 +805,19 @@ const advisors = [{
     type: "advisor",
     name: "Vishnu Neupane",
     position: "Advisor",
-    image: "https://scontent.fkep3-1.fna.fbcdn.net/v/t39.30808-6/494478540_23908497598744229_4993761312091139037_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=vRTtHnk10s4Q7kNvwF3cidC&_nc_oc=Adm8lUuyIavj9plscNLGsoTzOYShgh6qB5PeaeJxKrOQMJFzwLQr9kw1IyQ7XjI3Ypk&_nc_zt=23&_nc_ht=scontent.fkep3-1.fna&_nc_gid=AZ3RRsTb__Ul01vWrSF5OA&oh=00_AfNDAXQmt5DxGAHx87LToXL9BNdGZHGbx7NxsuGZxOBZzg&oe=68484F1E",
+    image: "/images/vishnu-neupane.jpg",
+    social: {
+        linkedin: "",
+        website: ""
+    },
+    createdAt: new Date(),
+    updatedAt: new Date()
+},
+{
+    type: "advisor",
+    name: "Hemraj Shahi",
+    position: "Advisor",
+    image: "/images/hemraj-shahi.jpg",
     social: {
         linkedin: "",
         website: ""

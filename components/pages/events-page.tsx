@@ -43,7 +43,7 @@ const ImageWithFallback = ({
         quality={85}
         onLoadingComplete={() => setIsLoading(false)}
         onError={() => {
-          setImgSrc("/placeholder.svg")
+          setImgSrc("/logo.png")
           setIsLoading(false)
         }}
       />
