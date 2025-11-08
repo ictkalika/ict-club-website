@@ -40,7 +40,8 @@ const ImageWithFallback = ({
         height={height}
         className={className}
         priority={priority}
-        quality={85}
+        quality={priority ? 85 : 75}
+        loading={priority ? "eager" : "lazy"}
         onLoadingComplete={() => setIsLoading(false)}
         onError={() => {
           setImgSrc("/logo.png")
@@ -285,39 +286,36 @@ export default function EventsPage() {
   const [currentGalleryImage, setCurrentGalleryImage] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
 
-  // Preload all slideshow and event images on mount
+  // Only preload critical slideshow images (current and next)
   useEffect(() => {
-    const preloadImages = () => {
-      // Preload slideshow images
-      slideshowImages.forEach(slide => {
-        const img = new window.Image()
-        img.src = slide.src
-      })
+    const preloadCriticalImages = () => {
+      // Preload current and next slideshow image
+      const currentImg = new window.Image()
+      currentImg.src = slideshowImages[currentSlide].src
       
-      // Preload event card images
-      events.forEach(event => {
-        const img = new window.Image()
-        img.src = event.image
-        // Preload first gallery image for faster modal display
-        if (event.gallery && event.gallery[0]) {
-          const galleryImg = new window.Image()
-          galleryImg.src = event.gallery[0]
-        }
-      })
+      const nextSlideIndex = (currentSlide + 1) % slideshowImages.length
+      const nextImg = new window.Image()
+      nextImg.src = slideshowImages[nextSlideIndex].src
     }
     
-    preloadImages()
-  }, [])
+    preloadCriticalImages()
+  }, [currentSlide])
 
-  // Preload all gallery images when an event is selected
+  // Preload only visible gallery images (current and adjacent) when modal opens
   useEffect(() => {
-    if (selectedEvent) {
-      selectedEvent.gallery.forEach(imgSrc => {
-        const img = new window.Image()
-        img.src = imgSrc
-      })
+    if (selectedEvent && selectedEvent.gallery.length > 0) {
+      // Preload current image
+      const current = new window.Image()
+      current.src = selectedEvent.gallery[currentGalleryImage]
+      
+      // Preload next image
+      if (selectedEvent.gallery.length > 1) {
+        const nextIndex = (currentGalleryImage + 1) % selectedEvent.gallery.length
+        const next = new window.Image()
+        next.src = selectedEvent.gallery[nextIndex]
+      }
     }
-  }, [selectedEvent])
+  }, [selectedEvent, currentGalleryImage])
 
   // Auto-advance slideshow every 5 seconds
   useEffect(() => {
@@ -478,9 +476,9 @@ export default function EventsPage() {
                     width={400}
                     height={400}
                     className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
-                    priority={index < 2}
-                    loading={index < 2 ? "eager" : "lazy"}
-                    quality={90}
+                    priority={index === 0}
+                    loading={index === 0 ? "eager" : "lazy"}
+                    quality={70}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
                 </div>
@@ -579,8 +577,9 @@ export default function EventsPage() {
                         alt={`${selectedEvent.title} gallery ${currentGalleryImage + 1}`}
                         fill
                         className="object-contain glow-border"
-                        priority
-                        quality={95}
+                        priority={false}
+                        quality={80}
+                        loading="lazy"
                         sizes="(max-width: 768px) 100vw, 600px"
                       />
 
