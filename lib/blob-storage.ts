@@ -35,12 +35,17 @@ export const EVENT_IMAGES = {
 
   installation:{
     banner: `${BLOB_BASE_URL}/installation/mainbanner.png`,
-    installation1: `${BLOB_BASE_URL}/installation/1.png`,
-    installation2: `${BLOB_BASE_URL}/installation/2.png`,
-    installation3: `${BLOB_BASE_URL}/installation/3.png`,
-    installation4: `${BLOB_BASE_URL}/installation/4.png`,
-    installation5: `${BLOB_BASE_URL}/installation/5.png`,
-    installation6: `${BLOB_BASE_URL}/installation/6.png`,
+    installation1: `${BLOB_BASE_URL}/ictinstallation/1.png`,
+    installation2: `${BLOB_BASE_URL}/ictinstallation/2.png`,
+    installation3: `${BLOB_BASE_URL}/ictinstallation/3.png`,
+    installation4: `${BLOB_BASE_URL}/ictinstallation/4.png`,
+    installation5: `${BLOB_BASE_URL}/ictinstallation/5.png`,
+    installation6: `${BLOB_BASE_URL}/ictinstallation/6.png`,
+    installation7: `${BLOB_BASE_URL}/ictinstallation/7.png`,
+    installation8: `${BLOB_BASE_URL}/ictinstallation/8.png`,
+    installation9: `${BLOB_BASE_URL}/ictinstallation/9.png`,
+    installation10: `${BLOB_BASE_URL}/ictinstallation/10.png`,
+
     bodreveal1: `${BLOB_BASE_URL}/installation/BOD%20POST.png`,
     bodreveal2: `${BLOB_BASE_URL}/installation/BOD%20POST-1.png`,
     bodreveal3: `${BLOB_BASE_URL}/installation/BOD%20POST-2.png`,

@@ -97,7 +97,7 @@ export default function Team() {
                 "sameAs": [
                   "https://linkedin.com/in/nayan135",
                   "https://twitter.com/nooneknows135",
-                  "https://nayanacharya.xyz"
+                  "https://nayan135.com.np"
                 ],
                 "image": "https://ictkalika.tech/images/nayan-acharya.jpg",
                 "knowsAbout": ["System Administration", "Technical Leadership", "Web Development", "Web Infrastructure"]

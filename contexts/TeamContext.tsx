@@ -14,13 +14,14 @@ interface TeamMember {
   };
   grade?: number;
   order?: number;
-  type: 'board' | 'member' | 'advisor';
+  type: 'board' | 'member' | 'advisor' | 'presidential-advisor';
 }
 
 interface TeamContextType {
   boardMembers: TeamMember[];
   members: TeamMember[];
   advisors: TeamMember[];
+  presidentialAdvisors: TeamMember[];
   loading: boolean;
   error: string | null;
   refetchTeamData: () => Promise<void>;
@@ -44,6 +45,7 @@ export const TeamProvider: React.FC<TeamProviderProps> = ({ children }) => {
   const [boardMembers, setBoardMembers] = useState<TeamMember[]>([]);
   const [members, setMembers] = useState<TeamMember[]>([]);
   const [advisors, setAdvisors] = useState<TeamMember[]>([]);
+  const [presidentialAdvisors, setPresidentialAdvisors] = useState<TeamMember[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -62,11 +64,13 @@ export const TeamProvider: React.FC<TeamProviderProps> = ({ children }) => {
       setBoardMembers(data.filter((member: TeamMember) => member.type === 'board'));
       setMembers(data.filter((member: TeamMember) => member.type === 'member'));
       setAdvisors(data.filter((member: TeamMember) => member.type === 'advisor'));
+      setPresidentialAdvisors(data.filter((member: TeamMember) => member.type === 'presidential-advisor'));
       
       console.log('Team data loaded successfully:', {
         board: data.filter((member: TeamMember) => member.type === 'board').length,
         members: data.filter((member: TeamMember) => member.type === 'member').length,
-        advisors: data.filter((member: TeamMember) => member.type === 'advisor').length
+        advisors: data.filter((member: TeamMember) => member.type === 'advisor').length,
+        presidentialAdvisors: data.filter((member: TeamMember) => member.type === 'presidential-advisor').length
       });
       
     } catch (err) {
@@ -90,6 +94,7 @@ export const TeamProvider: React.FC<TeamProviderProps> = ({ children }) => {
     boardMembers,
     members,
     advisors,
+    presidentialAdvisors,
     loading,
     error,
     refetchTeamData,

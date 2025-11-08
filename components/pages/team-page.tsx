@@ -28,12 +28,12 @@ interface TeamMember {
   };
   grade?: number;
   order?: number;
-  type: 'board' | 'member' | 'advisor';
+  type: 'board' | 'member' | 'advisor' | 'presidential-advisor';
 }
 
 export default function TeamPage() {
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
-  const { boardMembers, members, advisors, loading, error } = useTeam();
+  const { boardMembers, members, advisors, presidentialAdvisors, loading, error } = useTeam();
 
   const getSocialIcon = (platform: string, url: string) => {
     const iconProps = {
@@ -281,6 +281,52 @@ export default function TeamPage() {
           </div>
         </div>
       </section>
+
+      {/* Presidential Advisors Section */}
+      {presidentialAdvisors.length > 0 && (
+        <section className="py-20 px-4">
+          <div className="max-w-6xl mx-auto">
+            <motion.h2
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-4xl md:text-5xl font-bold text-white text-center mb-16 glow-text"
+            >
+              President Advisors
+            </motion.h2>
+
+            <div className={`grid gap-8 ${
+              presidentialAdvisors.length === 1 
+                ? 'grid-cols-1 place-items-center' 
+                : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
+            }`}>
+              {presidentialAdvisors.map((person, index) => (
+                <motion.div
+                  key={person._id || person.name}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className={`card-glow rounded-xl p-6 text-center transition-all duration-300 ${
+                    presidentialAdvisors.length === 1 ? 'max-w-sm w-full' : ''
+                  }`}
+                >
+                  <Image
+                    src={person.image || "/placeholder.svg"}
+                    alt={person.name}
+                    width={100}
+                    height={100}
+                    className="w-20 h-20 rounded-full mx-auto mb-4 glow-border object-cover"
+                  />
+                  <h3 className="text-lg font-bold text-white mb-2 uppercase">
+                    {person.name}
+                  </h3>
+                  <p className="text-[#9bd3ff] text-sm mb-2">{person.position}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Member Modal */}
       {selectedMember && (

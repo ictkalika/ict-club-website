@@ -82,7 +82,7 @@ const boardMembers = [{
     type: "board",
     name: "Bishnu Adhikari",
     position: "Head of Executive",
-    order: 8,
+    order: 5,
     image: "/images/bishnu-adhikari.jpg",
     bio: "Contributing to strategic planning and club operations.",
     skills: ["Strategy", "Operations", "Member Engagement"],
@@ -97,7 +97,7 @@ const boardMembers = [{
     type: "board",
     name: "NAYAN ACHARYA",
     position: "IT Head",
-    order: 5,
+    order: 6,
     image: "https://n4ce5f0tqvsfhe7l.public.blob.vercel-storage.com/nayan-acharya.jpg",
     bio: "Overseeing technical projects and infrastructure.",
     skills: ["System Administration", "DevOps", "Technical Leadership"],
@@ -114,7 +114,7 @@ const boardMembers = [{
     type: "board",
     name: "NARAYAN BHUSAL",
     position: "IT Officer",
-    order: 6,
+    order: 7,
     image: "/images/narayan-bhusal.jpg",
     bio: "Supporting technical initiatives and member development.",
     skills: ["Web Development", "Mentoring", "Project Coordination"],
@@ -130,7 +130,7 @@ const boardMembers = [{
     type: "board",
     name: "NISHAN REGMI",
     position: "Media",
-    order: 7,
+    order: 8,
     image: "https://storage.tally.so/private/inbound5447591931717511682.jpg?id=E0DyjB&accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkUwRHlqQiIsImZvcm1JZCI6Ind6UkVPRSIsImlhdCI6MTc0OTEyODA3NX0.2CTpAvwu_RXW9bSYkVgRcAbtM_YwzDSAoVn7n6u7FDw&signature=0f81f6034d38c3925c078457f14b42bf6c600c75b98d11e0b9eebf44a279df37",
     bio: "Managing club media presence and communications.",
     skills: ["Content Creation", "Social Media", "Photography"],
@@ -159,9 +159,41 @@ const boardMembers = [{
 },
 {
     type: "board",
+    name: "Princep Khanal",
+    position: "CS Representive",
+    order: 10,
+    image: "https://storage.tally.so/private/IMG-20250517-WA0037.jpg?id=VVOOEj&accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IlZWT09FaiIsImZvcm1JZCI6IjNOUXJrVyIsImlhdCI6MTc1MzE5ODY0OX0.Oy6Jb-qhJB9vT4gqwxr0I1uGMzCFiMDcysCQYNXR4rA&signature=0eaac9a2e6c74e8b3e4e731035846edd3b8816b515df72a33fa51228d4ffd434",
+    bio: "Representing the Computer Science department and facilitating member engagement.",
+    skills: ["Representation", "Engagement", "Coordination"],
+    social: {
+        instagram: "https://www.instagram.com/princepkhanal69",
+        email: "khanalprincep625@gmai.com"
+    },
+    createdAt: new Date(),
+    updatedAt: new Date()
+
+},
+{
+    type: "board",
+    name: "Asmit Gautam",
+    position: "Morning Representive",
+    order: 11,
+    image: "https://storage.tally.so/private/Linkedln.png?id=2Lzalj&accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJMemFsaiIsImZvcm1JZCI6IjNOUXJrVyIsImlhdCI6MTc1Mjg1MTg1N30.zDImKuHHzRNwKb_lrAai0RqnLTAGuTh0zef_Sp663sA&signature=3f45807619fd8d1c8831099dca0539d29e4a04a1b8c4caa3c60ebe24a9a11eb1",
+    bio: "Representing the Morning batch and facilitating member engagement.",
+    skills: ["Representation", "Engagement", "Coordination"],
+    social: {
+        instagram: "https://www.instagram.com/asmitgautam92",
+        linkedin:"https://www.linkedin.com/in/asmit-gautam-b29173335"
+    },
+    createdAt: new Date(),
+    updatedAt: new Date()
+},
+
+{
+    type: "board",
     name: "Aaditya Khanal",
     position: "Leader Of 11",
-    order: 10,
+    order: 12,
     image: "/images/aaditya-khanal.jpg",
     bio: "Engaging team with various events throughout the club.",
     skills: ["Leadership", "Communication", "Management"],
@@ -176,7 +208,7 @@ const boardMembers = [{
     type: "board",
     name: "Himanshu Sapkota",
     position: "Leader Of 10",
-    order: 11,
+    order: 13,
     image: "/images/himanshu-sapkota.jpg",
     bio: "Engaging team with various events throughout the club.",
     skills: ["Leadership", "Communication", "Management"],
@@ -191,7 +223,7 @@ const boardMembers = [{
     type: "board",
     name: "Samriddha poudel",
     position: "Leader Of 9",
-    order: 12,
+    order: 14,
     image: "/images/samriddha-poudel.jpg",
     bio: "Engaging team with various events throughout the club.",
     skills: ["Leadership", "Communication", "Management"],
@@ -206,7 +238,7 @@ const boardMembers = [{
     type: "board",
     name: "PRAZWAL ROKA",
     position: "Executive Member",
-    order: 13,
+    order: 15,
     image: "/images/prazwal-roka.jpg",
     bio: "Contributing to strategic planning and club operations.",
     skills: ["Strategy", "Operations", "Engagement"],
@@ -221,7 +253,7 @@ const boardMembers = [{
     type: "board",
     name: "Amit Pandey",
     position: "Executive Member",
-    order: 14,
+    order: 16,
     image: "/images/amit-pandey.jpg",
     bio: "Contributing to strategic planning and club operations.",
     skills: ["Strategy", "Operations", "Engagement"],
@@ -234,9 +266,68 @@ const boardMembers = [{
 },
 {
     type: "board",
+    name: "Girija Karki",
+    position: "Executive Member",
+    order: 17,
+    image: "/images/girija-karki.jpg",
+    bio: "Contributing to strategic planning and club operations",
+    skills: ["Strategy", "Operations", "Engagement"],
+    social: {
+        instagram: "https://www.instagram.com/_sanjokkarki?igsh=MXhmbmQxZno3eWFjaA==",
+        email: "karkisanjok06@gmail.com"
+    },
+    createdAt: new Date(),
+    updatedAt: new Date()
+}, {
+    type: "board",
+    name: "Sumit Kawar Magar",
+    position: "Executive Member",
+    order: 18,
+    image: "/images/sumit-kawar-magar.jpg",
+    bio: "Contributing to strategic planning and club operations",
+    skills: ["Strategy", "Operations", "Engagement"],
+    social: {
+        instagram: "https://www.instagram.com/aridorikichi/profilecard/?igsh=cWtwbjBreGNhZHE0",
+        email: "aridorikichi@gmail.com"
+    },
+    createdAt: new Date(),
+    updatedAt: new Date()
+}, {
+    type: "board",
+    name: "Anshu Aryal",
+    order: 19,
+    position: "Executive Member",
+    image: "/images/anshu-aryal.jpg",
+    bio: "Contributing to strategic planning and club operations",
+    skills: ["Strategy", "Operations", "Engagement"],
+    social: {
+        instagram: "https://www.instagram.com/anshuaryal15?igsh=MWgwZnpkNnR3dWF1cw==",
+        email: "aryalanshu64@gmail.com"
+    },
+    createdAt: new Date(),
+    updatedAt: new Date()
+},
+
+{
+    type: "board",
+    name: "Nischal Darnal",
+    position: "Executive Member",
+    order: 20,
+    image: "/images/nischal-darnal.jpg",
+    bio: "Contributing to strategic planning and club operations",
+    skills: ["Strategy", "Operations", "Engagement"],
+    social: {
+        facebook: "https://www.facebook.com/share/1LeiXMA3Zb/",
+        email: "nischaldarnal69@gmail.com"
+    },
+    createdAt: new Date(),
+    updatedAt: new Date()
+},
+{
+    type: "board",
     name: "Raunak Acharya",
     position: "Executive Member",
-    order: 15,
+    order: 21,
     image: "/images/raunak-acharya.jpg",
     bio: "Contributing to strategic planning and club operations",
     skills: ["Strategy", "Operations", "Engagement"],
@@ -251,7 +342,7 @@ const boardMembers = [{
     type: "board",
     name: "Aman Pokharel",
     position: "Executive Member",
-    order: 15,
+    order: 22,
     image: "/images/aman-pokharel.jpg",
     bio: "Contributing to strategic planning and club operations",
     skills: ["Strategy", "Operations", "Engagement"],
@@ -262,26 +353,43 @@ const boardMembers = [{
     createdAt: new Date(),
     updatedAt: new Date()
 },
-{
+
+ {
     type: "board",
-    name: "Nischal Darnal",
+    name: "Susant Gautam",
     position: "Executive Member",
-    order: 16,
-    image: "/images/nischal-darnal.jpg",
+    order: 23,
+    image: "/images/susant-gautam.jpg",
     bio: "Contributing to strategic planning and club operations",
     skills: ["Strategy", "Operations", "Engagement"],
     social: {
-        facebook: "https://www.facebook.com/share/1LeiXMA3Zb/",
-        email: "nischaldarnal69@gmail.com"
+        linkedin: "https://www.linkedin.com/in/sushant-gautam-705144314?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        email: "sushantgautam854@gmail.com"
     },
     createdAt: new Date(),
     updatedAt: new Date()
 },
 {
     type: "board",
+    name:"Shrijan Pandey",
+    position: "Executive Member",
+    order: 24,
+    image: "https://storage.tally.so/private/500230364_1457056305459742_276202699504456571_n.jpg?id=rVAXWL&accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InJWQVhXTCIsImZvcm1JZCI6IjNOUXJrVyIsImlhdCI6MTc1MTM5MTI3Mn0.UY2ltORNtEfnRjn0mf6CYlmXJN6czi5i9JZu0QziS5g&signature=47da8530620ed6f7a83134eb313d3227dfbe7f438a41727c952782f85aabf926",
+    bio: "Contributing to strategic planning and club operations",
+    skills: ["Strategy", "Operations", "Engagement"],
+    social: {
+        facebook: "https://www.facebook.com/kanxo.xoro.73307634",
+        linkedin:"https://www.linkedin.com/in/shrijan-pandey-539198314/"
+    },
+    createdAt: new Date(),
+    updatedAt: new Date()
+     
+},
+{
+    type: "board",
     name: "Anushka Pokhrel",
     position: "Executive Member",
-    order: 17,
+    order: 25,
     image: "/images/anushka-pokhrel.jpg",
     bio: "Contributing to strategic planning and club operations",
     skills: ["Strategy", "Operations", "Engagement"],
@@ -293,63 +401,6 @@ const boardMembers = [{
     updatedAt: new Date()
 },
 
-{
-    type: "board",
-    name: "Girija Karki",
-    position: "Executive Member",
-    order: 18,
-    image: "/images/girija-karki.jpg",
-    bio: "Contributing to strategic planning and club operations",
-    skills: ["Strategy", "Operations", "Engagement"],
-    social: {
-        instagram: "https://www.instagram.com/_sanjokkarki?igsh=MXhmbmQxZno3eWFjaA==",
-        email: "karkisanjok06@gmail.com"
-    },
-    createdAt: new Date(),
-    updatedAt: new Date()
-}, {
-    type: "board",
-    name: "Sumit Kawar Magar",
-    position: "Executive Member",
-    order: 19,
-    image: "/images/sumit-kawar-magar.jpg",
-    bio: "Contributing to strategic planning and club operations",
-    skills: ["Strategy", "Operations", "Engagement"],
-    social: {
-        instagram: "https://www.instagram.com/aridorikichi/profilecard/?igsh=cWtwbjBreGNhZHE0",
-        email: "aridorikichi@gmail.com"
-    },
-    createdAt: new Date(),
-    updatedAt: new Date()
-}, {
-    type: "board",
-    name: "Anshu Aryal",
-    order: 20,
-    position: "Executive Member",
-    image: "/images/anshu-aryal.jpg",
-    bio: "Contributing to strategic planning and club operations",
-    skills: ["Strategy", "Operations", "Engagement"],
-    social: {
-        instagram: "https://www.instagram.com/anshuaryal15?igsh=MWgwZnpkNnR3dWF1cw==",
-        email: "aryalanshu64@gmail.com"
-    },
-    createdAt: new Date(),
-    updatedAt: new Date()
-}, {
-    type: "board",
-    name: "Susant Gautam",
-    position: "Executive Member",
-    order: 21,
-    image: "/images/susant-gautam.jpg",
-    bio: "Contributing to strategic planning and club operations",
-    skills: ["Strategy", "Operations", "Engagement"],
-    social: {
-        linkedin: "https://www.linkedin.com/in/sushant-gautam-705144314?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-        email: "sushantgautam854@gmail.com"
-    },
-    createdAt: new Date(),
-    updatedAt: new Date()
-}
 ];
 
 // Regular Members Data
@@ -710,14 +761,7 @@ const members = [{
     createdAt: new Date(),
     updatedAt: new Date()
 },
-{
-    type: "member",
-    name: "Shrijan Pandey",
-    position: "MEMBER",
-    grade: 11,
-    createdAt: new Date(),
-    updatedAt: new Date()
-},
+
 {
     type: "member",
     name: "Sagar Sharma",
@@ -776,6 +820,21 @@ const members = [{
 }
 ];
 
+// Presidential Advisors Data
+const presidentialAdvisors = [{
+    type: "presidential-advisor",
+    name: "Hemraj Shahi",
+    position: "Presidential Advisor",
+    image: "/images/hemraj-shahi.jpg",
+    social: {
+        linkedin: "",
+        website: ""
+    },
+    createdAt: new Date(),
+    updatedAt: new Date()
+}
+];
+
 // Advisors Data
 const advisors = [{
     type: "advisor",
@@ -812,18 +871,6 @@ const advisors = [{
     },
     createdAt: new Date(),
     updatedAt: new Date()
-},
-{
-    type: "advisor",
-    name: "Hemraj Shahi",
-    position: "Advisor",
-    image: "/images/hemraj-shahi.jpg",
-    social: {
-        linkedin: "",
-        website: ""
-    },
-    createdAt: new Date(),
-    updatedAt: new Date()
 }
 ];
 
@@ -846,6 +893,9 @@ async function seedDatabase() {
         console.log('Inserting regular members...');
         await collection.insertMany(members);
 
+        console.log('Inserting presidential advisors...');
+        await collection.insertMany(presidentialAdvisors);
+
         console.log('Inserting advisors...');
         await collection.insertMany(advisors);
 
@@ -857,7 +907,7 @@ async function seedDatabase() {
         await collection.createIndex({ grade: 1 });
 
         console.log('Database seeded successfully!');
-        console.log(`Total documents inserted: ${boardMembers.length + members.length + advisors.length}`);
+        console.log(`Total documents inserted: ${boardMembers.length + members.length + presidentialAdvisors.length + advisors.length}`);
 
         // Display summary
         const counts = await collection.aggregate([

@@ -111,13 +111,16 @@ const events = [
  
     ],
     gallery: [
-      EVENT_IMAGES.installation.banner,
       EVENT_IMAGES.installation.installation1,
       EVENT_IMAGES.installation.installation2,
       EVENT_IMAGES.installation.installation3,
       EVENT_IMAGES.installation.installation4,
       EVENT_IMAGES.installation.installation5,
       EVENT_IMAGES.installation.installation6,
+      EVENT_IMAGES.installation.installation7,
+      EVENT_IMAGES.installation.installation8,
+      EVENT_IMAGES.installation.installation9,
+      EVENT_IMAGES.installation.installation10,
 
     ],
   },
