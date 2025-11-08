@@ -254,7 +254,7 @@ const boardMembers = [{
     name: "Amit Pandey",
     position: "Executive Member",
     order: 16,
-    image: "/images/amit-pandey.jpg",
+    image: "/images/Amit-Pandey.jpg",
     bio: "Contributing to strategic planning and club operations.",
     skills: ["Strategy", "Operations", "Engagement"],
     social: {

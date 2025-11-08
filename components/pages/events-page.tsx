@@ -199,7 +199,7 @@ const events = [
   },
   {
     id: 4,
-    title: "DIGITAL HORIZON - A STEP TOWARDS DIGITAL NEPAL",
+    title: "DIGITAL HORIZON - Syangja Edition",
     date: "2025-11-06",
     location: "Gainchaur Academy, Syangja",
     participants: 150,
@@ -239,7 +239,7 @@ EVENT_IMAGES.digitalHorizon.Syangja12,
   {
     id: 5,
     title: "DIGITAL HORIZON - PALPA EDITION",
-    date: "2082-06-29",
+    date: "2082-06-30",
     location: "Gejha Sunrise Academy, Palpa",
     participants: 120,
     image: EVENT_IMAGES.digitalHorizonPalpa.palpamain,
