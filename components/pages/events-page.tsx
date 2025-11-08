@@ -262,7 +262,6 @@ EVENT_IMAGES.digitalHorizon.Syangja12,
       "Empowering students in Palpa district",
     ],
     gallery: [
-      EVENT_IMAGES.digitalHorizonPalpa.main,
       EVENT_IMAGES.digitalHorizonPalpa.palpa1,
       EVENT_IMAGES.digitalHorizonPalpa.palpa2,
       EVENT_IMAGES.digitalHorizonPalpa.palpa3,

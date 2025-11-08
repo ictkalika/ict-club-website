@@ -71,6 +71,7 @@ Syangja12: `${BLOB_BASE_URL}/digitalhorizonsyangja/12.jpg`,
 
   },
   digitalHorizonPalpa: {
+   
     palpamain:`${BLOB_BASE_URL}/digitalhorizonpalpa/palpamain.jpg`,
     main: `${BLOB_BASE_URL}/digitalhorizon/main.jpg`,
     palpa1: `${BLOB_BASE_URL}/digitalhorizonpalpa/13.jpg`,
