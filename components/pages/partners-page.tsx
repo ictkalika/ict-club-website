@@ -55,7 +55,7 @@ export default function PartnersPage() {
             >
               <div className="bg-white/10 rounded-lg p-8 mb-6 mx-auto w-fit">
                 <Image
-                  src="https://kalikaschoolbtl.edu.np/public/storage/settings/August2021/RJVWU0tXC8MmrqoILbTt.png"
+                  src="/images/kalika-logo.png"
                   alt="KALIKA MANAVGYAN SECONDARY SCHOOL Logo"
                   width={200}
                   height={200}
@@ -221,3 +221,4 @@ export default function PartnersPage() {
     </div>
   )
 }
+
