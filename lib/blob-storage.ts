@@ -1,5 +1,6 @@
 // Utility functions for Vercel Blob storage
 import { list } from '@vercel/blob'
+import { it } from 'node:test'
 
 // Your Vercel Blob base URL
 export const BLOB_BASE_URL = 'https://n4ce5f0tqvsfhe7l.public.blob.vercel-storage.com'
@@ -55,16 +56,22 @@ export const EVENT_IMAGES = {
     bodreveal8: `${BLOB_BASE_URL}/installation/BOD%20POST-7.png`,
   },
   digitalHorizon: {
-    day11: `${BLOB_BASE_URL}/digitalhorizon/day11.png`,
-    day12: `${BLOB_BASE_URL}/digitalhorizon/day1-2.png`,
-    day21: `${BLOB_BASE_URL}/digitalhorizon/day2-1.png`,
-    day22: `${BLOB_BASE_URL}/digitalhorizon/day2-2.png`,
-    day3: `${BLOB_BASE_URL}/digitalhorizon/day3.png`,
-    day31: `${BLOB_BASE_URL}/digitalhorizon/day3-1.png`,
-    day13: `${BLOB_BASE_URL}/digitalhorizon/day1-3.png`,
-    day14: `${BLOB_BASE_URL}/digitalhorizon/day1-4.png`,
+ SyangjaMain: `${BLOB_BASE_URL}/digitalhorizonsyangja/syangjamain.png`,
+ Syangja2: `${BLOB_BASE_URL}/digitalhorizonsyangja/2.png`,
+ Syangja3: `${BLOB_BASE_URL}/digitalhorizonsyangja/3.png`,
+ Syangja4: `${BLOB_BASE_URL}/digitalhorizonsyangja/4.png`,
+ Syangja5: `${BLOB_BASE_URL}/digitalhorizonsyangja/5.png`,
+ Syangja6: `${BLOB_BASE_URL}/digitalhorizonsyangja/6.png`,
+Syangja7: `${BLOB_BASE_URL}/digitalhorizonsyangja/7.png`,
+Syangja8: `${BLOB_BASE_URL}/digitalhorizonsyangja/8.png`,
+Syangja9: `${BLOB_BASE_URL}/digitalhorizonsyangja/9.png`,
+Syangja10: `${BLOB_BASE_URL}/digitalhorizonsyangja/10.png`,
+Syangja11: `${BLOB_BASE_URL}/digitalhorizonsyangja/11.png`,
+Syangja12: `${BLOB_BASE_URL}/digitalhorizonsyangja/12.png`,
+
   },
   digitalHorizonPalpa: {
+    palpamain:`${BLOB_BASE_URL}/digitalhorizon/palpamain.png`,
     main: `${BLOB_BASE_URL}/digitalhorizon/main.png`,
     palpa1: `${BLOB_BASE_URL}/digitalhorizon/palpa1.png`,
     palpa2: `${BLOB_BASE_URL}/digitalhorizon/palpa2.png`,
@@ -79,7 +86,11 @@ export const EVENT_IMAGES = {
 
   },
   itfest: {
-    img1: `${BLOB_BASE_URL}/itfest/img1.jpg`,
-    img2: `${BLOB_BASE_URL}/itfest/img2.jpg`,
+    itfest1: `${BLOB_BASE_URL}/itfest/1.png`,
+    itfest2: `${BLOB_BASE_URL}/itfest/2.png`,
+    itfest3: `${BLOB_BASE_URL}/itfest/3.png`,
+    itfest4: `${BLOB_BASE_URL}/itfest/4.png`,
+    itfest5: `${BLOB_BASE_URL}/itfest/5.png`,
+
   },
 }
