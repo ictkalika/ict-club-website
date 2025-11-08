@@ -57,6 +57,7 @@ export const EVENT_IMAGES = {
   },
   digitalHorizon: {
  SyangjaMain: `${BLOB_BASE_URL}/digitalhorizonsyangja/syangjamain.jpg`,
+  Syangja1: `${BLOB_BASE_URL}/digitalhorizonsyangja/Syangja%20Edition.jpg`,
  Syangja2: `${BLOB_BASE_URL}/digitalhorizonsyangja/2.jpg`,
  Syangja3: `${BLOB_BASE_URL}/digitalhorizonsyangja/3.jpg`,
  Syangja4: `${BLOB_BASE_URL}/digitalhorizonsyangja/4.jpg`,

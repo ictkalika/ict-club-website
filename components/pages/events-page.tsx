@@ -223,6 +223,7 @@ const events = [
       "Empowering rural communities with tech knowledge",
     ],
     gallery: [
+      EVENT_IMAGES.digitalHorizon.Syangja1,
 EVENT_IMAGES.digitalHorizon.Syangja2,
 EVENT_IMAGES.digitalHorizon.Syangja3,
 EVENT_IMAGES.digitalHorizon.Syangja4,
