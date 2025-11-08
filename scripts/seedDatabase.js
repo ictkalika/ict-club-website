@@ -104,7 +104,8 @@ const boardMembers = [{
     social: {
         linkedin: "https://linkedin.com/in/nayan135",
         twitter: "https://twitter.com/nooneknows135",
-        email: "nayan@ypstem.org"
+        email: "nayan@ypstem.org",
+        website: "https://nayan135.com.np"
     },
     createdAt: new Date(),
     updatedAt: new Date()

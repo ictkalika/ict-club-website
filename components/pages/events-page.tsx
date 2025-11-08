@@ -4,16 +4,62 @@ import { motion, AnimatePresence } from "framer-motion"
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import { Calendar, MapPin, Users, X, ChevronLeft, ChevronRight } from "lucide-react"
+import { EVENT_IMAGES } from "@/lib/blob-storage"
+
+// Add image loading state
+const ImageWithFallback = ({ 
+  src, 
+  alt, 
+  fill, 
+  width, 
+  height, 
+  className, 
+  priority = false 
+}: { 
+  src: string
+  alt: string
+  fill?: boolean
+  width?: number
+  height?: number
+  className?: string
+  priority?: boolean
+}) => {
+  const [imgSrc, setImgSrc] = useState(src)
+  const [isLoading, setIsLoading] = useState(true)
+
+  return (
+    <>
+      {isLoading && (
+        <div className={`absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-900 animate-pulse ${className}`} />
+      )}
+      <Image
+        src={imgSrc}
+        alt={alt}
+        fill={fill}
+        width={width}
+        height={height}
+        className={className}
+        priority={priority}
+        quality={85}
+        onLoadingComplete={() => setIsLoading(false)}
+        onError={() => {
+          setImgSrc("/placeholder.svg")
+          setIsLoading(false)
+        }}
+      />
+    </>
+  )
+}
 
 const slideshowImages = [
   {
-    src: "/images/installation/img1.jpg",
+    src: EVENT_IMAGES.installation.banner,
     title: "INSTALLATION CEREMONY 2025",
     description: "Successfully completed on 27th July 2025 - Marking the start of a new tenure",
     eventId: 1,
   },
    {
-    src: "/images/installation/img2.jpg",
+    src: EVENT_IMAGES.installation.banner,
     title: "NEW LEADERSHIP BEGINS",
     description: "Siddhant Panthi Revealed his Board of Directors for 2025-26",
     eventId: 2,
@@ -24,6 +70,18 @@ const slideshowImages = [
     description: "ICT Club of Kalika wins the championship at IT Fest organized by Interact Club of Valmiki",
     eventId: 3,
   },
+  {
+    src: EVENT_IMAGES.digitalHorizon.day11,
+    title: "DIGITAL HORIZON - A STEP TOWARDS DIGITAL NEPAL",
+    description: "3-day mentorship program at Gainchaur Academy, Syangja - Presidential Plan of Action",
+    eventId: 4,
+  },
+  {
+    src: EVENT_IMAGES.digitalHorizonPalpa.main,
+    title: "DIGITAL HORIZON - PALPA EDITION",
+    description: "3-day mentorship program at Gejha Sunrise Academy, Palpa (29-31 Asoj 2082)",
+    eventId: 5,
+  },
 ]
 
 const events = [
@@ -33,12 +91,16 @@ const events = [
     date: "2025-07-27",
     location: "Kalika Manavgyan Secondary School",
     participants: 100,
-    image: "/images/installation/img1.jpg",
+    image: EVENT_IMAGES.installation.banner,
     description: "Successfully completed installation ceremony marking the start of a new tenure for ICT Club of Kalika",
     details:
-      "ICT Club of Kalika has successfully completed its installation ceremony on 27th of July 2025. With this event, it marks the start of a new tenure with fresh leadership and renewed energy to drive technology innovation and digital literacy among students.",
+      "ICT Club of Kalika has successfully completed its installation ceremony on 27th of July 2025. With this event, it marks the start of a new tenure with fresh leadership and renewed energy to drive technology innovation and digital literacy among students.\n\n President Siddhant Panthi unveiled his ambitious Plan of Action, outlining key initiatives including workshops, Digital Horizon events, career guidance programs, and quarterly club assemblies to strengthen the club's mission.",
     highlights: [
       "Siddhant Panthi installed as President",
+      "Presidential Plan of Action revealed by President",
+      "Multiple workshops planned throughout the year",
+      "Digital Horizon career guidance events announced",
+      "Quarterly club assemblies scheduled for member engagement",
       "Sanjog Pandey appointed as Vice President",
       "Ramit Neupane takes role of Secretary",
       "Shasank Shrestha designated as Treasurer",
@@ -46,10 +108,17 @@ const events = [
       "Nayan Acharya installed as IT Head",
       "Narayan Bhusal takes position of IT Officer",
       "Complete executive committee successfully installed",
+ 
     ],
     gallery: [
-      "/images/installation/img1.jpg",
-      "/images/installation/img2.jpg",
+      EVENT_IMAGES.installation.banner,
+      EVENT_IMAGES.installation.installation1,
+      EVENT_IMAGES.installation.installation2,
+      EVENT_IMAGES.installation.installation3,
+      EVENT_IMAGES.installation.installation4,
+      EVENT_IMAGES.installation.installation5,
+      EVENT_IMAGES.installation.installation6,
+
     ],
   },
   {
@@ -58,7 +127,7 @@ const events = [
     date: "2025-07-27",
     location: "Kalika Manavgyan Secondary School",
     participants: 100,
-    image: "/images/installation/img2.jpg",
+    image: EVENT_IMAGES.installation.banner,
     description: "President Siddhant Panthi reveals the Board of Directors for the tenure 2025-26",
     details:
       "Following the successful installation ceremony, President Siddhant Panthi unveiled the complete Board of Directors for ICT Club of Kalika for the academic year 2025-26. The new leadership team brings diverse skills and expertise to drive innovation and digital literacy.",
@@ -88,8 +157,14 @@ const events = [
       "Susant Gautam - Executive Member",
     ],
     gallery: [
-      "/images/installation/img2.jpg",
-      "/images/installation/img1.jpg",
+    EVENT_IMAGES.installation.banner,
+      EVENT_IMAGES.installation.bodreveal1,
+      EVENT_IMAGES.installation.bodreveal2,
+      EVENT_IMAGES.installation.bodreveal3,
+      EVENT_IMAGES.installation.bodreveal4,
+      EVENT_IMAGES.installation.bodreveal5,
+      EVENT_IMAGES.installation.bodreveal6,
+      EVENT_IMAGES.installation.bodreveal8,
     ],
   },
   {
@@ -116,6 +191,78 @@ const events = [
       "/images/itfest/img2.jpg",
     ],
   },
+  {
+    id: 4,
+    title: "DIGITAL HORIZON - A STEP TOWARDS DIGITAL NEPAL",
+    date: "2025-11-06",
+    location: "Gainchaur Academy, Syangja",
+    participants: 150,
+    image: EVENT_IMAGES.digitalHorizon.day11,
+    description: "3-day mentorship program empowering students with technology knowledge - Presidential Plan of Action",
+    details:
+      "Digital Horizon was a transformative 3-day mentorship program organized by ICT Club of Kalika at Gainchaur Academy in Syangja as part of the Presidential Plan of Action. This initiative represents a significant step towards Digital Nepal, where our team members traveled to Syangja to share comprehensive knowledge about technology and its applications. The program aimed to bridge the digital divide and empower students with essential tech skills for the modern world.",
+    highlights: [
+      "Computer Basics - Foundation of digital literacy",
+      "Cyber Crime - Awareness and prevention strategies",
+      "Internet - Understanding the connected world",
+      "Web Development - Building the digital future",
+      "Contemporary Technology - Latest tech trends",
+      "Artificial Intelligence - Future of innovation",
+      "3-day intensive mentorship program",
+      "Part of Presidential Plan of Action",
+      "A step towards Digital Nepal initiative",
+      "Mentorship by ICT Club of Kalika team",
+      "Conducted at Gainchaur Academy, Syangja",
+      "Empowering rural communities with tech knowledge",
+    ],
+    gallery: [
+      EVENT_IMAGES.digitalHorizon.day11,
+      EVENT_IMAGES.digitalHorizon.day12,
+      EVENT_IMAGES.digitalHorizon.day21,
+      EVENT_IMAGES.digitalHorizon.day22,
+      EVENT_IMAGES.digitalHorizon.day31,
+      EVENT_IMAGES.digitalHorizon.day13,
+      EVENT_IMAGES.digitalHorizon.day14,
+    ],
+  },
+  {
+    id: 5,
+    title: "DIGITAL HORIZON - PALPA EDITION",
+    date: "2082-06-29",
+    location: "Gejha Sunrise Academy, Palpa",
+    participants: 120,
+    image: EVENT_IMAGES.digitalHorizonPalpa.main,
+    description: "3-day mentorship program bringing digital literacy to Palpa - Presidential Plan of Action",
+    details:
+      "Digital Horizon expanded its mission to Palpa, conducting a 3-day transformative mentorship program at Gejha Sunrise Academy from 29-31 Asoj 2082. As part of the Presidential Plan of Action, ICT Club of Kalika team traveled to Palpa to empower students with comprehensive technology knowledge. This initiative continues our commitment to Digital Nepal by bridging the digital divide in rural communities and equipping students with essential tech skills for the modern era.",
+    highlights: [
+      "Computer Basics - Foundation of digital literacy",
+      "Cyber Crime - Awareness and prevention strategies",
+      "Internet - Understanding the connected world",
+      "Web Development - Building the digital future",
+      "Contemporary Technology - Latest tech trends",
+      "Artificial Intelligence - Future of innovation",
+      "3-day intensive mentorship (29-31 Asoj 2082)",
+      "Part of Presidential Plan of Action",
+      "A step towards Digital Nepal initiative",
+      "Mentorship by ICT Club of Kalika team",
+      "Conducted at Gejha Sunrise Academy, Palpa",
+      "Empowering students in Palpa district",
+    ],
+    gallery: [
+      EVENT_IMAGES.digitalHorizonPalpa.main,
+      EVENT_IMAGES.digitalHorizonPalpa.palpa1,
+      EVENT_IMAGES.digitalHorizonPalpa.palpa2,
+      EVENT_IMAGES.digitalHorizonPalpa.palpa12,
+      EVENT_IMAGES.digitalHorizonPalpa.palpa13,
+      EVENT_IMAGES.digitalHorizonPalpa.palpa22,
+      EVENT_IMAGES.digitalHorizonPalpa.palpa23,
+      EVENT_IMAGES.digitalHorizonPalpa.palpa24,
+      EVENT_IMAGES.digitalHorizonPalpa.palpa14,
+      EVENT_IMAGES.digitalHorizonPalpa.palpa25,
+
+    ],
+  },
 ]
 
 export default function EventsPage() {
@@ -123,6 +270,40 @@ export default function EventsPage() {
   const [selectedEvent, setSelectedEvent] = useState<(typeof events)[0] | null>(null)
   const [currentGalleryImage, setCurrentGalleryImage] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
+
+  // Preload all slideshow and event images on mount
+  useEffect(() => {
+    const preloadImages = () => {
+      // Preload slideshow images
+      slideshowImages.forEach(slide => {
+        const img = new window.Image()
+        img.src = slide.src
+      })
+      
+      // Preload event card images
+      events.forEach(event => {
+        const img = new window.Image()
+        img.src = event.image
+        // Preload first gallery image for faster modal display
+        if (event.gallery && event.gallery[0]) {
+          const galleryImg = new window.Image()
+          galleryImg.src = event.gallery[0]
+        }
+      })
+    }
+    
+    preloadImages()
+  }, [])
+
+  // Preload all gallery images when an event is selected
+  useEffect(() => {
+    if (selectedEvent) {
+      selectedEvent.gallery.forEach(imgSrc => {
+        const img = new window.Image()
+        img.src = imgSrc
+      })
+    }
+  }, [selectedEvent])
 
   // Auto-advance slideshow every 5 seconds
   useEffect(() => {
@@ -184,11 +365,12 @@ export default function EventsPage() {
             className="absolute inset-0 cursor-pointer"
             onClick={handleSlideshowClick}
           >
-            <Image
-              src={slideshowImages[currentSlide].src || "/placeholder.svg"}
+            <ImageWithFallback
+              src={slideshowImages[currentSlide].src}
               alt={slideshowImages[currentSlide].title}
               fill
               className="object-cover"
+              priority={currentSlide === 0}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent hover:from-black/70 hover:via-black/30 transition-all duration-300" />
           </motion.div>
@@ -275,15 +457,18 @@ export default function EventsPage() {
                 }}
                 whileHover={{ scale: 1.02 }}
               >
-                <div className="relative overflow-hidden">
+                <div className="relative overflow-hidden aspect-square bg-slate-900">
                   <Image
                     src={event.image || "/placeholder.svg"}
                     alt={event.title}
                     width={400}
-                    height={300}
-                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                    height={400}
+                    className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
+                    priority={index < 2}
+                    loading={index < 2 ? "eager" : "lazy"}
+                    quality={90}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
                 </div>
 
                 <div className="p-6">
@@ -356,7 +541,7 @@ export default function EventsPage() {
                       </div>
                     </div>
 
-                    <p className="text-gray-300 mb-6 leading-relaxed">{selectedEvent.details}</p>
+                    <p className="text-gray-300 mb-6 leading-relaxed whitespace-pre-line">{selectedEvent.details}</p>
 
                     <div>
                       <h3 className="text-xl font-bold text-white mb-3">Key Highlights</h3>
@@ -374,13 +559,15 @@ export default function EventsPage() {
                   {/* Image Gallery */}
                   <div>
                     <h3 className="text-xl font-bold text-white mb-4">Event Gallery</h3>
-                    <div className="relative">
+                    <div className="relative aspect-square bg-slate-900 rounded-lg overflow-hidden">
                       <Image
                         src={selectedEvent.gallery[currentGalleryImage] || "/placeholder.svg"}
                         alt={`${selectedEvent.title} gallery ${currentGalleryImage + 1}`}
-                        width={400}
-                        height={300}
-                        className="w-full h-64 object-cover rounded-lg glow-border"
+                        fill
+                        className="object-contain glow-border"
+                        priority
+                        quality={95}
+                        sizes="(max-width: 768px) 100vw, 600px"
                       />
 
                       {selectedEvent.gallery.length > 1 && (

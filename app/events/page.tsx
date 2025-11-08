@@ -1,5 +1,11 @@
 import EventsPage from "@/components/pages/events-page"
 import { Metadata } from "next"
+import { 
+  DIGITAL_HORIZON_SCHEMA, 
+  DIGITAL_HORIZON_PALPA_SCHEMA,
+  INSTALLATION_CEREMONY_SCHEMA, 
+  IT_FEST_SCHEMA 
+} from "@/lib/event-schema"
 
 export const metadata: Metadata = {
   title: "Events - ICT Club of Kalika",
@@ -32,6 +38,32 @@ export const metadata: Metadata = {
 export default function Events() {
   return (
     <>
+      {/* Breadcrumb Schema for Navigation */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://ictkalika.tech"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Events",
+                "item": "https://ictkalika.tech/events"
+              }
+            ]
+          })
+        }}
+      />
+      
+      {/* Event Series Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -65,6 +97,39 @@ export default function Events() {
           })
         }}
       />
+      
+      {/* Digital Horizon Event Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(DIGITAL_HORIZON_SCHEMA)
+        }}
+      />
+      
+      {/* Digital Horizon Palpa Event Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(DIGITAL_HORIZON_PALPA_SCHEMA)
+        }}
+      />
+      
+      {/* Installation Ceremony Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(INSTALLATION_CEREMONY_SCHEMA)
+        }}
+      />
+      
+      {/* IT Fest Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(IT_FEST_SCHEMA)
+        }}
+      />
+      
       <EventsPage />
     </>
   )

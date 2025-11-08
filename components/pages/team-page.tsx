@@ -13,6 +13,7 @@ import {
   Facebook,
   ExternalLink,
   Mail,
+  Globe,
 } from "lucide-react";
 
 interface TeamMember {
@@ -51,6 +52,7 @@ export default function TeamPage() {
       case "instagram":
         return <Instagram {...iconProps} />;
       case "website":
+        return <Globe {...iconProps} />;
       case "behance":
       case "facebook":
         return <ExternalLink {...iconProps} />;
