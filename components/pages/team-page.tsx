@@ -292,7 +292,7 @@ export default function TeamPage() {
               transition={{ duration: 0.8 }}
               className="text-4xl md:text-5xl font-bold text-white text-center mb-16 glow-text"
             >
-              President Advisors
+              President Advisor
             </motion.h2>
 
             <div className={`grid gap-8 ${
