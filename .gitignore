@@ -8,6 +8,8 @@
 /out/
 
 
+/scripts
+
 #random
 /scripts/seedDatabase.js
 
