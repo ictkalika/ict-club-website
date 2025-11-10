@@ -188,63 +188,7 @@ export default function TeamPage() {
           </div>
         </div>
       </section>
-
-      {/* Members Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <motion.h2
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-4xl md:text-5xl font-bold text-white text-center mb-16 glow-text"
-          >
-            Members
-          </motion.h2>
-
-          {/* Group members by grade */}
-          {[12, 11, 10, 9].map((grade) => {
-            const gradeMembers = members.filter(member => member.grade === grade);
-            
-            if (gradeMembers.length === 0) return null;
-            
-            return (
-              <div key={grade} className="mb-16">
-                <motion.h3
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6 }}
-                  className="text-2xl md:text-3xl font-bold text-white text-center mb-8"
-                >
-                  Grade {grade}
-                </motion.h3>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                  {gradeMembers.map((member, index) => (
-                    <motion.div
-                      key={member._id || `${member.name}-${index}`}
-                      initial={{ opacity: 0, y: 30 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6, delay: index * 0.05 }}
-                      className="card-glow rounded-xl p-6 text-center transition-all duration-300"
-                      whileHover={{ scale: 1.02 }}
-                    >
-                      <h4 className="text-lg font-bold text-white mb-1 uppercase">
-                        {member.name}
-                      </h4>
-                      <p className="text-[#9bd3ff] text-sm font-medium mb-2">
-                        {member.position}
-                      </p>
-                  
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* Advisors Section */}
+          {/* Advisors Section */}
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <motion.h2
@@ -327,6 +271,63 @@ export default function TeamPage() {
           </div>
         </section>
       )}
+
+      {/* Members Section */}
+      <section className="py-20 px-4">
+        <div className="max-w-6xl mx-auto">
+          <motion.h2
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-4xl md:text-5xl font-bold text-white text-center mb-16 glow-text"
+          >
+            Members
+          </motion.h2>
+
+          {/* Group members by grade */}
+          {[12, 11, 10, 9].map((grade) => {
+            const gradeMembers = members.filter(member => member.grade === grade);
+            
+            if (gradeMembers.length === 0) return null;
+            
+            return (
+              <div key={grade} className="mb-16">
+                <motion.h3
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                  className="text-2xl md:text-3xl font-bold text-white text-center mb-8"
+                >
+                  Grade {grade}
+                </motion.h3>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                  {gradeMembers.map((member, index) => (
+                    <motion.div
+                      key={member._id || `${member.name}-${index}`}
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: index * 0.05 }}
+                      className="card-glow rounded-xl p-6 text-center transition-all duration-300"
+                      whileHover={{ scale: 1.02 }}
+                    >
+                      <h4 className="text-lg font-bold text-white mb-1 uppercase">
+                        {member.name}
+                      </h4>
+                      <p className="text-[#9bd3ff] text-sm font-medium mb-2">
+                        {member.position}
+                      </p>
+                  
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+  
 
       {/* Member Modal */}
       {selectedMember && (
