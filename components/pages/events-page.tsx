@@ -83,6 +83,12 @@ const slideshowImages = [
     description: "3-day mentorship program at Gejha Sunrise Academy, Palpa (29-31 Asoj 2082)",
     eventId: 5,
   },
+  {
+    src: EVENT_IMAGES.aiguff.aiguffmain,
+    title: "AI GUFF BY ICT KALIKA",
+    description: "Session on Artificial Intelligence & Career Roadmap by Er. Sanjok Gyawali",
+    eventId: 6,
+  },
 ]
 
 const events = [
@@ -276,6 +282,41 @@ EVENT_IMAGES.digitalHorizon.Syangja12,
       EVENT_IMAGES.digitalHorizonPalpa.palpa10,
       EVENT_IMAGES.digitalHorizonPalpa.palpa11,
 
+    ],
+  },
+  {
+    id:6,
+    title:"AI GUFF - Rebooting Conversations with AI",
+    date: "2025-11-13",
+    location: "Kalika Manavgyan Secondary School",
+    participants: 200,
+    image: EVENT_IMAGES.aiguff.aiguffmain,
+    description: "A session on Artificial Intelligence & Its Career Roadmap delivered by Er. Sanjok Gyawali",
+    details:
+      "The ICT Club successfully organized AI Guff, an engaging session on Artificial Intelligence & Its Career Roadmap. Er. Sanjok Gyawali delivered a highly informative presentation, guiding technical students through the exciting world of AI and its vast opportunities.\n\nThis initiative marks a meaningful step toward preparing students for a future shaped by intelligent systems and technological innovation. Together, we learn, explore, and advance into the AI-powered future.",
+    highlights: [
+      "The fundamentals of AI explained clearly",
+      "Current AI-driven opportunities in the industry",
+      "Essential skills needed to enter the AI field",
+      "Key career paths in modern technology",
+      "Expert guidance from Er. Sanjok Gyawali",
+      "Interactive session with technical students",
+      "Preparing students for AI-powered future",
+      "Focus on practical career roadmap",
+    ],
+    gallery: [
+      EVENT_IMAGES.aiguff.aiguff1,
+      EVENT_IMAGES.aiguff.aiguff2,
+      EVENT_IMAGES.aiguff.aiguff3,
+      EVENT_IMAGES.aiguff.aiguff4,
+      EVENT_IMAGES.aiguff.aiguff5,
+      EVENT_IMAGES.aiguff.aiguff6,
+      EVENT_IMAGES.aiguff.aiguff7,
+      EVENT_IMAGES.aiguff.aiguff8,
+      EVENT_IMAGES.aiguff.aiguff9,
+      EVENT_IMAGES.aiguff.aiguff11,
+      EVENT_IMAGES.aiguff.aiguff12,
+      EVENT_IMAGES.aiguff.aiguff13,
     ],
   },
 ]

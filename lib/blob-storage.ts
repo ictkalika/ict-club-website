@@ -97,4 +97,21 @@ Syangja12: `${BLOB_BASE_URL}/digitalhorizonsyangja/12.jpg`,
     itfest5: `${BLOB_BASE_URL}/itfest/5.jpg`,
 
   },
+
+  aiguff:{
+    aiguffmain: `${BLOB_BASE_URL}/aiguff/aiguffmain.jpg`,
+    aiguff1: `${BLOB_BASE_URL}/aiguff/1.jpg`,
+    aiguff2: `${BLOB_BASE_URL}/aiguff/2.jpg`,
+    aiguff3: `${BLOB_BASE_URL}/aiguff/3.jpg`,
+    aiguff4: `${BLOB_BASE_URL}/aiguff/4.jpg`,
+    aiguff5: `${BLOB_BASE_URL}/aiguff/5.jpg`,
+    aiguff6: `${BLOB_BASE_URL}/aiguff/6.jpg`,
+    aiguff7: `${BLOB_BASE_URL}/aiguff/7.jpg`,
+    aiguff8: `${BLOB_BASE_URL}/aiguff/8.jpg`,
+    aiguff9: `${BLOB_BASE_URL}/aiguff/9.jpg`,
+    aiguff10: `${BLOB_BASE_URL}/aiguff/10.jpg`,
+    aiguff11: `${BLOB_BASE_URL}/aiguff/11.jpg`,
+    aiguff12: `${BLOB_BASE_URL}/aiguff/12.jpg`,
+    aiguff13: `${BLOB_BASE_URL}/aiguff/13.jpg`,
+  }
 }
