@@ -5,6 +5,7 @@ import { useState, useEffect } from "react"
 import Image from "next/image"
 import { Calendar, MapPin, Users, X, ChevronLeft, ChevronRight } from "lucide-react"
 import { EVENT_IMAGES } from "@/lib/blob-storage"
+import AdSenseAd from "@/components/ui/adsense-ad"
 
 // Add image loading state
 const ImageWithFallback = ({ 
@@ -546,6 +547,20 @@ export default function EventsPage() {
               </motion.div>
             ))}
           </div>
+
+          {/* AdSense Ad - After Events Grid */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mt-16 max-w-4xl mx-auto"
+          >
+            <AdSenseAd 
+              adSlot="9767595606" 
+              responsive={true}
+              className="rounded-lg overflow-hidden"
+            />
+          </motion.div>
         </div>
       </section>
 

@@ -5,7 +5,6 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, Calendar, Users, Trophy } from "lucide-react"
 import { useTeam } from "@/contexts/TeamContext"
-import AdSenseAd from "@/components/ui/adsense-ad"
 import React from "react"
 
 const recentProjects = [
@@ -25,27 +24,6 @@ export default function HomePage() {
   ]  
   return (
     <>
-      {/* AMP ad script injection */}
-      <script
-        async
-        custom-element="amp-ad"
-        src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
-      />
-      {/* AMP ad markup injection */}
-      <div
-        dangerouslySetInnerHTML={{
-          __html: `
-            <amp-ad width="100vw" height="320"
-              type="adsense"
-              data-ad-client="ca-pub-7528456570041321"
-              data-ad-slot="9767595606"
-              data-auto-format="rspv"
-              data-full-width="">
-              <div overflow=""></div>
-            </amp-ad>
-          `,
-        }}
-      />
       <div className="pt-16">
         {/* Hero Section */}
         <section className="min-h-screen flex items-center justify-center px-4">
@@ -129,17 +107,6 @@ export default function HomePage() {
                 </motion.div>
               ))}
             </motion.div>
-          </div>
-        </section>
-
-        {/* Ad Section */}
-        <section className="py-10 px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <AdSenseAd 
-              adSlot="9767595606" 
-              responsive={true}
-              className="my-8"
-            />
           </div>
         </section>
 
