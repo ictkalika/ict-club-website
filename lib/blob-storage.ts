@@ -113,5 +113,14 @@ Syangja12: `${BLOB_BASE_URL}/digitalhorizonsyangja/12.jpg`,
     aiguff11: `${BLOB_BASE_URL}/aiguff/11.jpg`,
     aiguff12: `${BLOB_BASE_URL}/aiguff/12.jpg`,
     aiguff13: `${BLOB_BASE_URL}/aiguff/13.jpg`,
+  },
+
+  ResumeBuildingWorkshop:{
+    Resume1: `${BLOB_BASE_URL}/ResumeBuildingWorkshop/1.jpg`,
+    Resume2: `${BLOB_BASE_URL}/ResumeBuildingWorkshop/2.jpg`,
+    Resume3: `${BLOB_BASE_URL}/ResumeBuildingWorkshop/3.jpg`,
+    Resume4: `${BLOB_BASE_URL}/ResumeBuildingWorkshop/4.jpg`,
+    Resume5: `${BLOB_BASE_URL}/ResumeBuildingWorkshop/5.jpg`,
+    Resume6: `${BLOB_BASE_URL}/ResumeBuildingWorkshop/6.jpg`,
   }
 }

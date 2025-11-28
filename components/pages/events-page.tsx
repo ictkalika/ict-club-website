@@ -90,6 +90,12 @@ const slideshowImages = [
     description: "Session on Artificial Intelligence & Career Roadmap by Er. Sanjok Gyawali",
     eventId: 6,
   },
+  {
+    src: EVENT_IMAGES.ResumeBuildingWorkshop.Resume1,
+    title: "RESUME BUILDING WORKSHOP 2025",
+    description: "Professional resume building session in collaboration with NextGen Innovator Club",
+    eventId: 7,
+  },
 ]
 
 const events = [
@@ -318,6 +324,35 @@ EVENT_IMAGES.digitalHorizon.Syangja12,
       EVENT_IMAGES.aiguff.aiguff11,
       EVENT_IMAGES.aiguff.aiguff12,
       EVENT_IMAGES.aiguff.aiguff13,
+    ],
+  },
+  {
+    id: 7,
+    title: "Resume Building Workshop",
+    date: "2025-11-27",
+    location: "Kalika Manavgyan Secondary School",
+    participants: 30,
+    image: EVENT_IMAGES.ResumeBuildingWorkshop.Resume1,
+    description: "A professional resume building workshop organized in collaboration with NextGen Innovator Club to help students create impactful resumes for their career journey.",
+    details:
+      "On November 27th, 2025, ICT Club of Kalika successfully organized a Resume Building Workshop in collaboration with NextGen Innovator Club. This workshop was designed to equip students with the essential skills needed to create professional and effective resumes.\n\nThe session covered key aspects of resume writing including formatting, content structure, highlighting achievements, and tailoring resumes for different opportunities. Students learned practical tips and best practices that will help them stand out in the competitive job market.\n\nThis collaborative effort between ICT Club of Kalika and NextGen Innovator Club demonstrates our commitment to preparing students not just technically, but also professionally for their future careers.",
+    highlights: [
+      "Professional resume writing techniques",
+      "Effective formatting and structure guidelines",
+      "How to highlight skills and achievements",
+      "Tailoring resumes for different opportunities",
+      "Common resume mistakes to avoid",
+      "Tips for creating ATS-friendly resumes",
+      "Collaboration with NextGen Innovator Club",
+      "Hands-on workshop with practical examples",
+    ],
+    gallery: [
+      EVENT_IMAGES.ResumeBuildingWorkshop.Resume1,
+      EVENT_IMAGES.ResumeBuildingWorkshop.Resume2,
+      EVENT_IMAGES.ResumeBuildingWorkshop.Resume3,
+      EVENT_IMAGES.ResumeBuildingWorkshop.Resume4,
+      EVENT_IMAGES.ResumeBuildingWorkshop.Resume5,
+      EVENT_IMAGES.ResumeBuildingWorkshop.Resume6,
     ],
   },
 ]
