@@ -1,7 +1,7 @@
 ## Contributors
 
 - [@nayan135](https://github.com/nayan135) - Lead Developer
-- [@naranbhusal02](https://github.com/naranbhusal02)
+- [@naranbhusal02](https://github.com/naranbhusal02) - Frontend Developer
 - [@shasank00](https://github.com/shasank00)
 - [@SiddhantPanthi](https://github.com/SiddhantPanthi)
 - [@AnshuAryal1](https://github.com/AnshuAryal1)
