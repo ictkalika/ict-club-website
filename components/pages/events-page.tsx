@@ -5,6 +5,7 @@ import { useState, useEffect } from "react"
 import Image from "next/image"
 import { Calendar, MapPin, Users, X, ChevronLeft, ChevronRight } from "lucide-react"
 import { EVENT_IMAGES } from "@/lib/blob-storage"
+import AdSenseAd from "@/components/ui/adsense-ad"
 
 // Add image loading state
 const ImageWithFallback = ({ 
@@ -82,6 +83,18 @@ const slideshowImages = [
     title: "DIGITAL HORIZON - PALPA EDITION",
     description: "3-day mentorship program at Gejha Sunrise Academy, Palpa (29-31 Asoj 2082)",
     eventId: 5,
+  },
+  {
+    src: EVENT_IMAGES.aiguff.aiguffmain,
+    title: "AI GUFF BY ICT KALIKA",
+    description: "Session on Artificial Intelligence & Career Roadmap by Er. Sanjok Gyawali",
+    eventId: 6,
+  },
+  {
+    src: EVENT_IMAGES.ResumeBuildingWorkshop.Resume1,
+    title: "RESUME BUILDING WORKSHOP 2025",
+    description: "Professional resume building session in collaboration with NextGen Innovator Club",
+    eventId: 7,
   },
 ]
 
@@ -276,6 +289,70 @@ EVENT_IMAGES.digitalHorizon.Syangja12,
       EVENT_IMAGES.digitalHorizonPalpa.palpa10,
       EVENT_IMAGES.digitalHorizonPalpa.palpa11,
 
+    ],
+  },
+  {
+    id:6,
+    title:"AI GUFF - Rebooting Conversations with AI",
+    date: "2025-11-13",
+    location: "Kalika Manavgyan Secondary School",
+    participants: 200,
+    image: EVENT_IMAGES.aiguff.aiguffmain,
+    description: "A session on Artificial Intelligence & Its Career Roadmap delivered by Er. Sanjok Gyawali",
+    details:
+      "The ICT Club successfully organized AI Guff, an engaging session on Artificial Intelligence & Its Career Roadmap. Er. Sanjok Gyawali delivered a highly informative presentation, guiding technical students through the exciting world of AI and its vast opportunities.\n\nThis initiative marks a meaningful step toward preparing students for a future shaped by intelligent systems and technological innovation. Together, we learn, explore, and advance into the AI-powered future.",
+    highlights: [
+      "The fundamentals of AI explained clearly",
+      "Current AI-driven opportunities in the industry",
+      "Essential skills needed to enter the AI field",
+      "Key career paths in modern technology",
+      "Expert guidance from Er. Sanjok Gyawali",
+      "Interactive session with technical students",
+      "Preparing students for AI-powered future",
+      "Focus on practical career roadmap",
+    ],
+    gallery: [
+      EVENT_IMAGES.aiguff.aiguff1,
+      EVENT_IMAGES.aiguff.aiguff2,
+      EVENT_IMAGES.aiguff.aiguff3,
+      EVENT_IMAGES.aiguff.aiguff4,
+      EVENT_IMAGES.aiguff.aiguff5,
+      EVENT_IMAGES.aiguff.aiguff6,
+      EVENT_IMAGES.aiguff.aiguff7,
+      EVENT_IMAGES.aiguff.aiguff8,
+      EVENT_IMAGES.aiguff.aiguff9,
+      EVENT_IMAGES.aiguff.aiguff11,
+      EVENT_IMAGES.aiguff.aiguff12,
+      EVENT_IMAGES.aiguff.aiguff13,
+    ],
+  },
+  {
+    id: 7,
+    title: "Resume Building Workshop",
+    date: "2025-11-27",
+    location: "Kalika Manavgyan Secondary School",
+    participants: 30,
+    image: EVENT_IMAGES.ResumeBuildingWorkshop.Resume1,
+    description: "A professional resume building workshop organized in collaboration with NextGen Innovator Club to help students create impactful resumes for their career journey.",
+    details:
+      "On November 27th, 2025, ICT Club of Kalika successfully organized a Resume Building Workshop in collaboration with NextGen Innovator Club. This workshop was designed to equip students with the essential skills needed to create professional and effective resumes.\n\nThe session covered key aspects of resume writing including formatting, content structure, highlighting achievements, and tailoring resumes for different opportunities. Students learned practical tips and best practices that will help them stand out in the competitive job market.\n\nThis collaborative effort between ICT Club of Kalika and NextGen Innovator Club demonstrates our commitment to preparing students not just technically, but also professionally for their future careers.",
+    highlights: [
+      "Professional resume writing techniques",
+      "Effective formatting and structure guidelines",
+      "How to highlight skills and achievements",
+      "Tailoring resumes for different opportunities",
+      "Common resume mistakes to avoid",
+      "Tips for creating ATS-friendly resumes",
+      "Collaboration with NextGen Innovator Club",
+      "Hands-on workshop with practical examples",
+    ],
+    gallery: [
+      EVENT_IMAGES.ResumeBuildingWorkshop.Resume1,
+      EVENT_IMAGES.ResumeBuildingWorkshop.Resume2,
+      EVENT_IMAGES.ResumeBuildingWorkshop.Resume3,
+      EVENT_IMAGES.ResumeBuildingWorkshop.Resume4,
+      EVENT_IMAGES.ResumeBuildingWorkshop.Resume5,
+      EVENT_IMAGES.ResumeBuildingWorkshop.Resume6,
     ],
   },
 ]
@@ -505,6 +582,20 @@ export default function EventsPage() {
               </motion.div>
             ))}
           </div>
+
+          {/* AdSense Ad - After Events Grid */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mt-16 max-w-4xl mx-auto"
+          >
+            <AdSenseAd 
+              adSlot="9767595606" 
+              responsive={true}
+              className="rounded-lg overflow-hidden"
+            />
+          </motion.div>
         </div>
       </section>
 

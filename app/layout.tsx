@@ -1,4 +1,5 @@
 import type React from "react"
+import Script from "next/script"
 import ClientLayout from "./clientLayout"
 import './globals.css'
 import OrganizationSchema from '@/components/schema/OrganizationSchema'
@@ -119,8 +120,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7528456570041321"
-     crossOrigin="anonymous"></script>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7528456570041321"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
       </head>
       <body>
         <ClientLayout>{children}</ClientLayout>

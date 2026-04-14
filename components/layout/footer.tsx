@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion"
 import { Mail, MapPin, Phone } from "lucide-react"
-import AdSenseAd from "@/components/ui/adsense-ad"
 
 export default function Footer() {
   return (
@@ -51,17 +50,6 @@ export default function Footer() {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-
-        {/* Ad Section */}
-        <div className="border-t border-white/10 mt-8 pt-8">
-          <div className="max-w-4xl mx-auto text-center mb-6">
-            <AdSenseAd 
-              adSlot="9767595606" 
-              responsive={true}
-              className="opacity-80 hover:opacity-100 transition-opacity"
-            />
           </div>
         </div>
 

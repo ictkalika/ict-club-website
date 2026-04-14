@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 import { Users, Target, Eye, Award } from "lucide-react"
+import AdSenseAd from "@/components/ui/adsense-ad"
 
 export default function AboutPage() {
   return (
@@ -190,8 +191,25 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* AdSense Ad - After About Content */}
+      <section className="py-10 px-4">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <AdSenseAd 
+              adSlot="3254228805" 
+              responsive={true}
+              className="rounded-lg overflow-hidden"
+            />
+          </motion.div>
+        </div>
+      </section>
+
       {/* Call to Action */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4">`
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 50 }}

@@ -1,8 +1,8 @@
 // Utility functions for Vercel Blob storage
 import { list } from '@vercel/blob'
-import { it } from 'node:test'
 
-// Your Vercel Blob base URL
+
+
 export const BLOB_BASE_URL = 'https://n4ce5f0tqvsfhe7l.public.blob.vercel-storage.com'
 
 // Function to get all blob files (for server-side use)
@@ -97,4 +97,30 @@ Syangja12: `${BLOB_BASE_URL}/digitalhorizonsyangja/12.jpg`,
     itfest5: `${BLOB_BASE_URL}/itfest/5.jpg`,
 
   },
+
+  aiguff:{
+    aiguffmain: `${BLOB_BASE_URL}/aiguff/aiguffmain.jpg`,
+    aiguff1: `${BLOB_BASE_URL}/aiguff/1.jpg`,
+    aiguff2: `${BLOB_BASE_URL}/aiguff/2.jpg`,
+    aiguff3: `${BLOB_BASE_URL}/aiguff/3.jpg`,
+    aiguff4: `${BLOB_BASE_URL}/aiguff/4.jpg`,
+    aiguff5: `${BLOB_BASE_URL}/aiguff/5.jpg`,
+    aiguff6: `${BLOB_BASE_URL}/aiguff/6.jpg`,
+    aiguff7: `${BLOB_BASE_URL}/aiguff/7.jpg`,
+    aiguff8: `${BLOB_BASE_URL}/aiguff/8.jpg`,
+    aiguff9: `${BLOB_BASE_URL}/aiguff/9.jpg`,
+    aiguff10: `${BLOB_BASE_URL}/aiguff/10.jpg`,
+    aiguff11: `${BLOB_BASE_URL}/aiguff/11.jpg`,
+    aiguff12: `${BLOB_BASE_URL}/aiguff/12.jpg`,
+    aiguff13: `${BLOB_BASE_URL}/aiguff/13.jpg`,
+  },
+
+  ResumeBuildingWorkshop:{
+    Resume1: `${BLOB_BASE_URL}/ResumeBuildingWorkshop/1.jpg`,
+    Resume2: `${BLOB_BASE_URL}/ResumeBuildingWorkshop/2.jpg`,
+    Resume3: `${BLOB_BASE_URL}/ResumeBuildingWorkshop/3.jpg`,
+    Resume4: `${BLOB_BASE_URL}/ResumeBuildingWorkshop/4.jpg`,
+    Resume5: `${BLOB_BASE_URL}/ResumeBuildingWorkshop/5.jpg`,
+    Resume6: `${BLOB_BASE_URL}/ResumeBuildingWorkshop/6.jpg`,
+  }
 }

@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 
 interface AdSenseAdProps {
   adSlot: string
@@ -11,6 +11,12 @@ interface AdSenseAdProps {
   responsive?: boolean
 }
 
+declare global {
+  interface Window {
+    adsbygoogle: any[]
+  }
+}
+
 export default function AdSenseAd({ 
   adSlot, 
   adFormat = "auto", 
@@ -19,26 +25,33 @@ export default function AdSenseAd({
   className = "",
   responsive = true 
 }: AdSenseAdProps) {
+  const adRef = useRef<HTMLModElement>(null)
+
   useEffect(() => {
     try {
-      // @ts-ignore
-      if (typeof window !== 'undefined' && window.adsbygoogle) {
-        // @ts-ignore
-        (window.adsbygoogle = window.adsbygoogle || []).push({})
+      if (typeof window !== 'undefined') {
+ 
+        window.adsbygoogle = window.adsbygoogle || []
+        
+        // Push ad to queue
+        window.adsbygoogle.push({})
+        
+        console.log('AdSense ad loaded for slot:', adSlot)
       }
     } catch (error) {
       console.error('AdSense error:', error)
     }
-  }, [])
-
-  const adStyles = responsive 
-    ? "block w-full h-auto" 
-    : `block w-[${width}px] h-[${height}px]`
+  }, [adSlot])
 
   return (
     <div className={`adsense-container ${className}`}>
       <ins
-        className={`adsbygoogle ${adStyles}`}
+        ref={adRef}
+        className="adsbygoogle"
+        style={{ 
+          display: 'block',
+          ...(responsive ? {} : { width: `${width}px`, height: `${height}px` })
+        }}
         data-ad-client="ca-pub-7528456570041321"
         data-ad-slot={adSlot}
         data-ad-format={adFormat}
